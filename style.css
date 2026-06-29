@@ -1,74 +1,121 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
-
 body {
-font-family: Arial, sans-serif;
-color: white;
-background: #050507;
-overflow-x: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #05060a;
+  color: white;
+  overflow-x: hidden;
 }
 
-/* خلفية متحركة */
+/* خلفية سينمائية */
 .bg {
-position: fixed;
-width: 200%;
-height: 200%;
-background: radial-gradient(circle at 20% 20%, #ffcc00 0%, transparent 30%),
-radial-gradient(circle at 80% 30%, #6a00ff 0%, transparent 35%),
-radial-gradient(circle at 50% 80%, #00d4ff 0%, transparent 40%);
-animation: move 15s infinite alternate;
-opacity: 0.15;
-z-index: -1;
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 20%, gold, transparent 30%),
+              radial-gradient(circle at 70% 40%, #6a00ff, transparent 35%),
+              radial-gradient(circle at 40% 80%, #00d4ff, transparent 40%);
+  opacity: 0.15;
+  z-index: -1;
 }
 
-@keyframes move {
-from { transform: translate(0,0) scale(1); }
-to { transform: translate(-10%, -10%) scale(1.2); }
-}
-
+/* الهيدر */
 header {
-text-align: center;
-padding: 80px 20px 40px;
+  text-align: center;
+  padding: 80px 20px 20px;
 }
 
 h1 {
-font-size: 70px;
-letter-spacing: 5px;
-background: linear-gradient(90deg, gold, #ff7b00, gold);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  font-size: 70px;
+  letter-spacing: 5px;
+  background: linear-gradient(90deg, gold, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 p {
-opacity: 0.8;
-margin-top: 10px;
+  opacity: 0.8;
 }
 
+/* البحث */
+input {
+  margin-top: 15px;
+  padding: 10px;
+  width: 60%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+/* الناف */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: gold;
+}
+
+/* الكروت */
 .grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-gap: 20px;
-padding: 50px;
-max-width: 1000px;
-margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 50px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .card {
-background: rgba(255,255,255,0.05);
-border: 1px solid rgba(255,255,255,0.1);
-padding: 30px;
-border-radius: 15px;
-text-align: center;
-cursor: pointer;
-transition: 0.4s;
-backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .card:hover {
-transform: translateY(-10px) scale(1.05);
-background: rgba(255,215,0,0.15);
-box-shadow: 0 0 30px rgba(255,215,0,0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(255,215,0,0.2);
+}
+
+/* المودال */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid gold;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
 }
