@@ -1,40 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
 body {
-margin: 0;
-font-family: 'Arial', sans-serif;
-background: radial-gradient(circle at top, #0d0d0d, #000);
+font-family: Arial, sans-serif;
 color: white;
+background: #050507;
+overflow-x: hidden;
+}
+
+/* خلفية متحركة */
+.bg {
+position: fixed;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle at 20% 20%, #ffcc00 0%, transparent 30%),
+radial-gradient(circle at 80% 30%, #6a00ff 0%, transparent 35%),
+radial-gradient(circle at 50% 80%, #00d4ff 0%, transparent 40%);
+animation: move 15s infinite alternate;
+opacity: 0.15;
+z-index: -1;
+}
+
+@keyframes move {
+from { transform: translate(0,0) scale(1); }
+to { transform: translate(-10%, -10%) scale(1.2); }
 }
 
 header {
 text-align: center;
-padding: 60px 20px;
+padding: 80px 20px 40px;
 }
 
 h1 {
-font-size: 60px;
-color: gold;
-text-shadow: 0 0 20px gold;
+font-size: 70px;
+letter-spacing: 5px;
+background: linear-gradient(90deg, gold, #ff7b00, gold);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 p {
-font-size: 20px;
 opacity: 0.8;
+margin-top: 10px;
 }
 
-nav {
-display: flex;
-justify-content: center;
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 gap: 20px;
-padding: 15px;
+padding: 50px;
+max-width: 1000px;
+margin: auto;
+}
+
+.card {
 background: rgba(255,255,255,0.05);
+border: 1px solid rgba(255,255,255,0.1);
+padding: 30px;
+border-radius: 15px;
+text-align: center;
+cursor: pointer;
+transition: 0.4s;
+backdrop-filter: blur(10px);
 }
 
-nav a {
-color: white;
-text-decoration: none;
-transition: 0.3s;
-}
-
-nav a:hover {
-color: gold;
+.card:hover {
+transform: translateY(-10px) scale(1.05);
+background: rgba(255,215,0,0.15);
+box-shadow: 0 0 30px rgba(255,215,0,0.3);
 }
