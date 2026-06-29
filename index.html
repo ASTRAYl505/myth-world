@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Myth World - Complete Universe</title>
+<title>Myth World - Expanded Codex</title>
 
 <style>
 body{
@@ -14,14 +14,13 @@ color:white;
 overflow-x:hidden;
 }
 
-/* 🌌 BACKGROUND */
 .stars{
 position:fixed;
 width:100%;
 height:100%;
 background:radial-gradient(white 1px,transparent 1px);
 background-size:80px 80px;
-opacity:0.15;
+opacity:0.12;
 animation:move 120s linear infinite;
 z-index:-1;
 }
@@ -31,91 +30,71 @@ from{transform:translateY(0);}
 to{transform:translateY(-2000px);}
 }
 
-/* 🎬 INTRO */
-#intro{
+/* HEADER */
+.hero{
 text-align:center;
-padding:60px 20px;
+padding:50px 20px;
 }
 
-#intro h1{
+.hero h1{
+font-size:60px;
 color:gold;
-font-size:50px;
+text-shadow:0 0 20px gold;
 }
 
-#intro button{
-display:block;
-margin:10px auto;
-padding:10px 20px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-background:gold;
-font-weight:bold;
+.hero p{
+opacity:0.8;
 }
 
-/* 🔍 SEARCH */
-.searchBox{
+/* SECTION TITLE */
+.sectionTitle{
 text-align:center;
-margin:20px;
+margin:40px 0 10px;
+font-size:26px;
+color:gold;
 }
 
-#search{
-padding:10px;
-width:60%;
-border-radius:10px;
-border:none;
-}
-
-/* 📚 GRID */
+/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-max-width:900px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+padding:30px;
+max-width:1300px;
 margin:auto;
-padding:20px;
-display:none;
 }
 
+/* CARD */
 .card{
 background:rgba(255,255,255,0.05);
-border-radius:12px;
-padding:10px;
-cursor:pointer;
-text-align:center;
+border-radius:16px;
+overflow:hidden;
 transition:0.3s;
+cursor:pointer;
+border:1px solid rgba(255,215,0,0.2);
 }
 
 .card:hover{
 transform:scale(1.05);
-box-shadow:0 0 20px gold;
+box-shadow:0 0 30px gold;
 }
 
 .card img{
 width:100%;
-height:110px;
+height:190px;
 object-fit:cover;
-border-radius:10px;
 }
 
-/* 🕰️ TIMELINE */
-.timeline{
-max-width:800px;
-margin:auto;
-padding:20px;
-display:none;
+.card h3{
+margin:10px;
+color:gold;
 }
 
-/* 📦 PANEL */
-#panel{
-position:fixed;
-right:-420px;
-top:15%;
-width:320px;
-background:black;
-border-left:2px solid gold;
-padding:15px;
-transition:0.4s;
+.card p{
+margin:10px;
+font-size:13px;
+opacity:0.9;
+line-height:1.5;
 }
 </style>
 </head>
@@ -124,127 +103,117 @@ transition:0.4s;
 
 <div class="stars"></div>
 
-<!-- 🎬 INTRO -->
-<div id="intro">
-
+<!-- 🌌 HEADER -->
+<div class="hero">
 <h1>MYTH WORLD</h1>
-<p>Where Legends, Gods & History Come Alive</p>
+<p>Expanded Universe Codex — Mythology • History • Creatures • Realms</p>
 
-<h3>What do you want to explore?</h3>
+<p>
+Created by: Osama Mohamed · Ahmed Al-khlil · Anas Al-abdolkarem · Thabet Hameed · Alyman Hamied
+</p>
+</div>
 
-<button onclick="startAll()">🌍 Explore Everything</button>
-<button onclick="startGods()">⚡ Greek Gods</button>
-<button onclick="startMyths()">🐉 Myth Creatures</button>
-<button onclick="showTimeline()">🕰️ World History</button>
+<!-- 🕰️ ERAS -->
+<div class="sectionTitle">🌍 WORLD ERAS (FULL EXPANDED TIMELINE)</div>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+<h3>Mythic Age</h3>
+<p><b>Time:</b> Before time itself</p>
+<p><b>Events:</b> Birth of universes, formation of cosmic energy, creation of primordial beings and first gods.</p>
+<p><b>Impact:</b> Foundation of all reality layers and myth systems.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1534447677768-be436bb09401">
+<h3>Age of Gods</h3>
+<p><b>Time:</b> 2000–400 BC</p>
+<p><b>Events:</b> Olympus rule, Titan war, divine punishment cycles, human creation myths.</p>
+<p><b>Impact:</b> Gods directly influenced Earth civilizations and laws of nature.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be">
+<h3>Ancient Civilizations</h3>
+<p><b>Time:</b> 3000 BC – 500 AD</p>
+<p><b>Events:</b> Egyptian magic systems, Babylon prophecy, Greek mythology expansion.</p>
+<p><b>Impact:</b> First recorded myth systems and temples built for gods.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526779259212-939e64788e3c">
+<h3>Medieval Age</h3>
+<p><b>Time:</b> 500–1500 AD</p>
+<p><b>Events:</b> Dragon sightings, knight orders, cursed kingdoms, holy wars.</p>
+<p><b>Impact:</b> Myth creatures begin hiding from human kingdoms.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+<h3>Dark Age</h3>
+<p><b>Time:</b> 1400–1700 AD</p>
+<p><b>Events:</b> Vampires emerge, witch hunts, forbidden rituals, shadow societies.</p>
+<p><b>Impact:</b> Separation between human and supernatural worlds.</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+<h3>Victorian Era</h3>
+<p><b>Time:</b> 1800–1900 AD</p>
+<p><b>Events:</b> Industrial science vs occult research, hidden monster investigations.</p>
+<p><b>Impact:</b> Scientific attempt to prove supernatural existence.</p>
+</div>
 
 </div>
 
-<!-- 🔍 SEARCH -->
-<div class="searchBox">
-<input id="search" placeholder="Search..." onkeyup="search()">
+<!-- 🧬 CREATURES -->
+<div class="sectionTitle">🧬 MYTHICAL CREATURES (EXPANDED FILES)</div>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://cdn.pixabay.com/photo/2020/03/31/19/20/zeus-4989512_1280.jpg">
+<h3>Zeus</h3>
+<p><b>Type:</b> God</p>
+<p><b>Origin:</b> Olympus Realm</p>
+<p><b>Era:</b> Age of Gods</p>
+<p><b>Abilities:</b> Thunder control, divine judgment, sky manipulation</p>
+<p><b>Story:</b> Supreme ruler of Olympus who defeated Titans and established divine order.</p>
 </div>
 
-<!-- 📚 GRID -->
-<div class="grid" id="grid"></div>
-
-<!-- 🕰️ TIMELINE -->
-<div class="timeline" id="timeline">
-
-<h2>🌍 World Timeline</h2>
-
-<p>🌌 Mythic Age — Before time</p>
-<p>⚡ Age of Gods — 2000–400 BC</p>
-<p>🏺 Ancient Civilizations — 3000 BC – 500 AD</p>
-<p>🏰 Medieval Age — 500–1500 AD</p>
-<p>🧛 Dark Age — 1400–1700 AD</p>
-<p>🎩 Victorian Era — 1800–1900 AD</p>
-<p>⚙️ Industrial Age — 1900–1950 AD</p>
-<p>🌍 Modern Age — 1950–Now</p>
-<p>🎌 Fiction Layer — Anime Worlds</p>
-
+<div class="card">
+<img src="https://cdn.pixabay.com/photo/2021/09/10/10/19/dragon-6613215_1280.jpg">
+<h3>Dragon</h3>
+<p><b>Type:</b> Ancient Beast</p>
+<p><b>Origin:</b> Pre-human Earth layers</p>
+<p><b>Era:</b> Mythic Age</p>
+<p><b>Abilities:</b> Fire breath, flight, extreme longevity</p>
+<p><b>Story:</b> Guardians of ancient realms that protected hidden energy cores of Earth.</p>
 </div>
 
-<!-- 📦 PANEL -->
-<div id="panel">
-<h2 id="name"></h2>
-<img id="img" style="width:100%;border-radius:10px;">
-<p id="meta"></p>
-<p id="desc"></p>
-<button onclick="closePanel()">Close</button>
+<div class="card">
+<img src="https://cdn.pixabay.com/photo/2017/01/31/13/14/vampire-2025473_1280.jpg">
+<h3>Vampire</h3>
+<p><b>Type:</b> Undead Entity</p>
+<p><b>Origin:</b> Dark European Myth</p>
+<p><b>Era:</b> Dark Age</p>
+<p><b>Abilities:</b> Immortality, regeneration, mind control</p>
+<p><b>Story:</b> Humans cursed by forbidden rituals that became eternal predators of night.</p>
 </div>
 
-<script>
+<div class="card">
+<img src="https://cdn.pixabay.com/photo/2020/10/05/20/23/wolf-5630123_1280.jpg">
+<h3>Werewolf</h3>
+<p><b>Type:</b> Cursed Human</p>
+<p><b>Origin:</b> Lunar curse lineage</p>
+<p><b>Era:</b> Medieval Age</p>
+<p><b>Abilities:</b> Super strength, transformation, enhanced senses</p>
+<p><b>Story:</b> Humans cursed by moon cycles, becoming beasts under full moon nights.</p>
+</div>
 
-const DB = {
-Zeus:{type:"God",img:"https://cdn.pixabay.com/photo/2020/03/31/19/20/zeus-4989512_1280.jpg",era:"Age of Gods",period:"1200–400 BC",age:"Immortal",desc:"God of thunder"},
-Dragon:{type:"Myth",img:"https://cdn.pixabay.com/photo/2021/09/10/10/19/dragon-6613215_1280.jpg",era:"Mythic",period:"Pre-History",age:"Ancient",desc:"Fire beast"},
-Vampire:{type:"Undead",img:"https://cdn.pixabay.com/photo/2017/01/31/13/14/vampire-2025473_1280.jpg",era:"Dark Age",period:"1400–Present",age:"500+ years",desc:"Blood creature"},
-Werewolf:{type:"Cursed",img:"https://cdn.pixabay.com/photo/2020/10/05/20/23/wolf-5630123_1280.jpg",era:"Medieval",period:"1000–1600",age:"Human cursed",desc:"Moon beast"}
-};
-
-const grid=document.getElementById("grid");
-
-function build(){
-grid.innerHTML="";
-Object.keys(DB).forEach(k=>{
-let c=document.createElement("div");
-c.className="card";
-c.innerHTML=`<img src="${DB[k].img}"><b>${k}</b>`;
-c.onclick=()=>openItem(k);
-grid.appendChild(c);
-});
-}
-
-build();
-
-/* 🎬 INTRO CONTROLS */
-function startAll(){
-document.getElementById("intro").style.display="none";
-grid.style.display="grid";
-}
-
-function startGods(){
-startAll();
-Object.keys(DB).forEach(k=>{
-grid.children[0].style.display="";
-});
-}
-
-function startMyths(){
-startAll();
-}
-
-/* 🕰️ TIMELINE */
-function showTimeline(){
-document.getElementById("intro").style.display="none";
-document.getElementById("timeline").style.display="block";
-}
-
-/* 📦 OPEN */
-function openItem(k){
-let d=DB[k];
-document.getElementById("name").innerText=k;
-document.getElementById("img").src=d.img;
-document.getElementById("meta").innerText=
-`Type: ${d.type} | Era: ${d.era} | Period: ${d.period} | Age: ${d.age}`;
-document.getElementById("desc").innerText=d.desc;
-document.getElementById("panel").style.right="0";
-}
-
-/* ❌ CLOSE */
-function closePanel(){
-document.getElementById("panel").style.right="-420px";
-}
-
-/* 🔍 SEARCH */
-function search(){
-let v=document.getElementById("search").value.toLowerCase();
-document.querySelectorAll(".card").forEach(c=>{
-c.style.display=c.innerText.toLowerCase().includes(v)?"block":"none";
-});
-}
-
-</script>
+</div>
 
 </body>
 </html>
