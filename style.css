@@ -1,54 +1,94 @@
-.card-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:60px 20px;
-position:relative;
-z-index:2;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
 }
 
-/* 🌌 نجوم خلف الكروت */
-.card-grid::before{
-content:"";
-position:absolute;
-top:0;left:0;right:0;bottom:0;
-background:radial-gradient(circle, rgba(0,255,255,0.05), transparent);
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* 🌌 BACKGROUND */
+.bg{
+position:fixed;
+inset:0;
+background:radial-gradient(circle at center,#001,#000);
 z-index:-1;
 }
 
-/* 🪐 CARD */
-.planet-card{
+/* 🎬 INTRO */
+.intro{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.intro h1{
+font-size:60px;
+letter-spacing:4px;
+color:#00e5ff;
+text-shadow:0 0 20px #00e5ff;
+}
+
+button{
+margin-top:20px;
+padding:10px 25px;
+border:none;
+background:#00e5ff;
+color:#000;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* 🪐 TITLE */
+.title{
+text-align:center;
+margin:40px 0;
+color:#00e5ff;
+letter-spacing:3px;
+}
+
+/* 📦 GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:20px;
+}
+
+/* 🧊 NASA CARD */
+.card{
 background:rgba(255,255,255,0.05);
-border:1px solid rgba(0,229,255,0.25);
-backdrop-filter:blur(12px);
+border:1px solid rgba(0,229,255,0.2);
 border-radius:15px;
 padding:15px;
 text-align:center;
+backdrop-filter:blur(12px);
 opacity:0;
-transform:translateY(40px);
+transform:translateY(30px);
 transition:0.6s;
 }
 
-/* ✨ دخول */
-.planet-card.show{
+.card.show{
 opacity:1;
 transform:translateY(0);
 }
 
-/* 🖼️ image */
-.planet-card img{
-width:80px;
-height:80px;
+.card img{
+width:90px;
+height:90px;
+object-fit:cover;
 margin-bottom:10px;
-transition:0.3s;
 }
 
-.planet-card:hover img{
-transform:scale(1.2) rotate(10deg);
-}
-
-/* ✨ hover glow */
-.planet-card:hover{
-box-shadow:0 0 20px rgba(0,229,255,0.4);
+.card:hover{
+transform:scale(1.05);
 border-color:#00e5ff;
+box-shadow:0 0 20px rgba(0,229,255,0.3);
 }
