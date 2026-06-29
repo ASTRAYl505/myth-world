@@ -11,14 +11,12 @@ function openPanel(title, desc) {
 }
 
 function closePanel() {
-  document.getElementById("panel").style.right = "-320px";
+  document.getElementById("panel").style.right = "-340px";
 }
 
 /* FILTER */
 function filter(type) {
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
+  document.querySelectorAll(".card").forEach(card => {
     card.style.display =
       type === "all" || card.classList.contains(type)
         ? "block"
@@ -28,12 +26,18 @@ function filter(type) {
 
 /* SEARCH */
 function searchWorld() {
-  let input = document.getElementById("search").value.toLowerCase();
-  let cards = document.querySelectorAll(".card");
+  let val = document.getElementById("search").value.toLowerCase();
 
-  cards.forEach(card => {
-    card.style.display = card.innerText.toLowerCase().includes(input)
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(val)
       ? "block"
       : "none";
   });
 }
+
+/* CURSOR LIGHT */
+document.addEventListener("mousemove", (e) => {
+  const glow = document.querySelector(".cursor-glow");
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
