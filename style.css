@@ -6,22 +6,40 @@ font-family:'Orbitron',sans-serif;
 }
 
 body{
-background:#000;
-color:#fff;
+background:black;
+color:white;
 overflow-x:hidden;
+}
+
+/* 🚀 LAUNCH SCREEN */
+.launch{
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+animation:launchFade 2s forwards;
+animation-delay:1.5s;
+}
+
+@keyframes launchFade{
+to{
+opacity:0;
+visibility:hidden;
+}
 }
 
 /* 🌌 BACKGROUND */
 .bg{
 position:fixed;
 inset:0;
-background:
-radial-gradient(circle at 20% 20%, rgba(0,229,255,0.08), transparent 40%),
-radial-gradient(circle at 80% 60%, rgba(255,0,200,0.05), transparent 40%);
-z-index:-1;
+background:radial-gradient(circle at center,#001,#000);
+z-index:-2;
 }
 
-/* 🎬 INTRO */
+/* 🌟 INTRO */
 .intro{
 height:100vh;
 display:flex;
@@ -32,7 +50,7 @@ text-align:center;
 }
 
 .intro h1{
-font-size:60px;
+font-size:62px;
 color:#00e5ff;
 text-shadow:0 0 20px #00e5ff;
 }
@@ -40,14 +58,13 @@ text-shadow:0 0 20px #00e5ff;
 .subtitle{
 opacity:0.7;
 margin-top:10px;
-font-size:14px;
 }
 
 .team{
-margin-top:20px;
 font-size:11px;
 opacity:0.8;
 color:#7df9ff;
+margin-top:20px;
 line-height:1.6;
 max-width:85%;
 }
@@ -58,7 +75,7 @@ margin-top:20px;
 padding:10px 25px;
 border:none;
 background:#00e5ff;
-color:#000;
+color:black;
 font-weight:bold;
 cursor:pointer;
 border-radius:6px;
@@ -67,22 +84,22 @@ border-radius:6px;
 /* 🪐 GRID */
 .nasa-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:40px 20px;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:30px;
+padding:60px 30px;
 }
 
 /* 🧊 CARD */
 .nasa-card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(0,229,255,0.2);
-border-radius:14px;
-padding:15px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(0,229,255,0.15);
+border-radius:16px;
+padding:18px;
 text-align:center;
-backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
 opacity:0;
-transform:translateY(30px);
-transition:0.6s;
+transform:translateY(40px);
+transition:0.7s;
 cursor:pointer;
 }
 
@@ -92,16 +109,16 @@ transform:translateY(0);
 }
 
 .nasa-card img{
-width:85px;
-height:85px;
+width:90px;
+height:90px;
 object-fit:cover;
 margin-bottom:10px;
 }
 
 .nasa-card:hover{
-transform:scale(1.05);
+transform:scale(1.06);
+box-shadow:0 0 25px rgba(0,229,255,0.3);
 border-color:#00e5ff;
-box-shadow:0 0 20px rgba(0,229,255,0.3);
 }
 
 /* 🪐 POPUP */
@@ -120,4 +137,13 @@ z-index:999;
 
 .popup.hidden{
 display:none;
+}
+
+/* 🌟 TITLE */
+.title{
+text-align:center;
+font-size:30px;
+letter-spacing:5px;
+color:#00e5ff;
+margin-top:40px;
 }
