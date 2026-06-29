@@ -1,71 +1,97 @@
-body{
+*{
 margin:0;
-overflow:hidden;
-background:black;
-font-family:Arial;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-/* 🚪 INTRO */
-#intro{
-position:absolute;
-top:30%;
-width:100%;
-text-align:center;
+/* 🌌 BACKGROUND */
+body{
+overflow:hidden;
+background:radial-gradient(circle at center, #000010, #000000);
 color:white;
+}
+
+/* 🚪 INTRO SCREEN */
+#intro{
+position:fixed;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:rgba(0,0,0,0.9);
 z-index:10;
+}
+
+#intro h1{
+font-size:60px;
+letter-spacing:5px;
+color:#ffffff;
+text-shadow:0 0 20px #00e5ff;
+margin-bottom:20px;
 }
 
 .team{
 font-size:14px;
 opacity:0.8;
+margin-bottom:10px;
 }
 
 .uni{
-font-size:13px;
+font-size:12px;
 opacity:0.6;
+margin-bottom:30px;
 }
 
-/* 🌌 INFO */
-#info{
-position:fixed;
-top:10px;
-left:10px;
-color:#00e5ff;
-z-index:10;
+/* 🚀 ENTER BUTTON */
+#intro button{
+padding:12px 25px;
+background:#00e5ff;
+border:none;
+color:black;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+transition:0.3s;
 }
 
-/* 🪐 SPACE LAYER */
-#nasaLayer{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:1;
+#intro button:hover{
+background:#ffffff;
+transform:scale(1.05);
 }
 
-/* 📜 HUD */
+/* 🪐 HUD PANEL */
 #planetHUD{
 position:fixed;
 top:20px;
 right:20px;
-width:260px;
-padding:12px;
-background:rgba(0,0,0,0.6);
+width:280px;
+padding:15px;
+background:rgba(0,0,0,0.7);
 border:1px solid #00e5ff;
-color:#00e5ff;
-box-shadow:0 0 25px #00e5ff;
-font-size:13px;
+border-radius:10px;
+color:white;
 display:none;
-z-index:9999;
+z-index:20;
+backdrop-filter:blur(10px);
+box-shadow:0 0 20px rgba(0,229,255,0.3);
 }
 
-/* 🔘 BUTTON */
-button{
-padding:10px 20px;
-border:none;
-background:#00e5ff;
-color:black;
-font-weight:bold;
-cursor:pointer;
+#planetHUD h2{
+color:#00e5ff;
+margin-bottom:10px;
+}
+
+#planetHUD p{
+font-size:13px;
+line-height:1.4;
+opacity:0.9;
+}
+
+/* 🌌 CANVAS (THREE.JS) */
+canvas{
+display:block;
 }
