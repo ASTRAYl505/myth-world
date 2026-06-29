@@ -4,45 +4,38 @@ setTimeout(()=>{
 document.getElementById("launch").style.display="none";
 },1500);
 
-/* 🪐 animate cards */
-document.querySelectorAll(".nasa-card").forEach((card,i)=>{
-setTimeout(()=>{
-card.classList.add("show");
-},i*150);
-});
-
 startStars();
 
 });
 
-/* 🚀 START BUTTON */
+/* 🚀 start */
 window.start = function(){
 document.querySelector(".intro").style.display="none";
-}
-
-/* 🪐 PLANETS DATA */
-const planets = {
-Mercury:"Closest to Sun. No atmosphere.",
-Venus:"Extreme heat and toxic clouds.",
-Earth:"Only planet with life.",
-Mars:"Red iron surface planet.",
-Jupiter:"Largest gas giant.",
-Saturn:"Ring system planet."
 };
 
-/* 🪐 POPUP */
+/* 🪐 planets */
+const planets = {
+Mercury:["Closest to Sun","https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg"],
+Venus:["Hottest planet","https://upload.wikimedia.org/wikipedia/commons/3/3d/Venus_-_real_color.jpg"],
+Earth:["Planet of life","https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg"],
+Mars:["Red planet","https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg"],
+Jupiter:["Largest planet","https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg"],
+Saturn:["Ring system","https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg"]
+};
+
+/* 🪐 popup */
 window.openPlanet = function(name){
 document.getElementById("popup").classList.remove("hidden");
 document.getElementById("pname").innerText=name;
-document.getElementById("pinfo").innerText=planets[name];
-}
+document.getElementById("pinfo").innerText=planets[name][0];
+document.getElementById("pimg").src=planets[name][1];
+};
 
-/* ❌ CLOSE */
 window.closePopup = function(){
 document.getElementById("popup").classList.add("hidden");
-}
+};
 
-/* 🌌 STARS */
+/* 🌌 stars */
 function startStars(){
 
 const c=document.getElementById("stars");
@@ -53,7 +46,7 @@ c.height=window.innerHeight;
 
 let stars=[];
 
-for(let i=0;i<120;i++){
+for(let i=0;i<100;i++){
 stars.push({
 x:Math.random()*c.width,
 y:Math.random()*c.height,
