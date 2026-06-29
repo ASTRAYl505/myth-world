@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Myth World - Legendary Codex</title>
+<title>Myth World Codex</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- 🌟 HERO -->
 <header class="hero">
   <h1>MYTH WORLD</h1>
-  <p>Ultimate Living Universe Codex</p>
+  <p>Ultimate Interactive Universe Codex</p>
 
-  <!-- 👑 CREDITS -->
-  <div style="margin-top:15px; font-size:14px; opacity:0.8;">
-    Created by:  
+  <!-- 👑 TEAM -->
+  <div class="credits">
+    Created by:
     <b>Osama Mohamed</b> ·
     <b>Ahmed Al-khlil</b> ·
     <b>Anas Al-abdolkarem</b> ·
@@ -25,9 +26,11 @@
 </header>
 
 <!-- 🔍 SEARCH -->
-<input id="search" placeholder="Search myth, gods, creatures..." onkeyup="search()">
+<div class="searchBox">
+  <input id="search" placeholder="Search the universe..." onkeyup="search()">
+</div>
 
-<!-- 📚 CODEx GRID -->
+<!-- 📚 GRID (JS will fill it) -->
 <div class="grid" id="grid"></div>
 
 <!-- 📦 DETAILS PANEL -->
@@ -42,6 +45,7 @@
   <button onclick="closePanel()">Close</button>
 </div>
 
+<!-- 🧠 SCRIPT -->
 <script src="script.js"></script>
 
 </body>
