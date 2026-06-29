@@ -4,6 +4,7 @@ setTimeout(()=>{
 document.getElementById("launch").style.display="none";
 },1500);
 
+/* 🪐 animate cards */
 document.querySelectorAll(".nasa-card").forEach((card,i)=>{
 setTimeout(()=>{
 card.classList.add("show");
@@ -14,68 +15,67 @@ startStars();
 
 });
 
-/* 🚀 START */
-function start(){
+/* 🚀 START BUTTON */
+window.start = function(){
 document.querySelector(".intro").style.display="none";
 }
 
-/* 🪐 DATA (مضمون 100%) */
+/* 🪐 PLANETS DATA */
 const planets = {
-Mercury:"Closest planet to Sun. No atmosphere. Extreme temperature shifts.",
-Venus:"Hottest planet. Thick toxic atmosphere.",
-Earth:"Only planet with life. Water covers 71%.",
-Mars:"Red planet. Evidence of past water.",
-Jupiter:"Largest planet. Giant gas planet.",
-Saturn:"Ring system made of ice and rock."
+Mercury:"Closest to Sun. No atmosphere.",
+Venus:"Extreme heat and toxic clouds.",
+Earth:"Only planet with life.",
+Mars:"Red iron surface planet.",
+Jupiter:"Largest gas giant.",
+Saturn:"Ring system planet."
 };
 
-/* 🪐 OPEN POPUP */
-function openPlanet(name){
+/* 🪐 POPUP */
+window.openPlanet = function(name){
 document.getElementById("popup").classList.remove("hidden");
 document.getElementById("pname").innerText=name;
 document.getElementById("pinfo").innerText=planets[name];
 }
 
 /* ❌ CLOSE */
-function closePopup(){
+window.closePopup = function(){
 document.getElementById("popup").classList.add("hidden");
 }
 
 /* 🌌 STARS */
 function startStars(){
 
-const canvas=document.getElementById("stars");
-const ctx=canvas.getContext("2d");
+const c=document.getElementById("stars");
+const ctx=c.getContext("2d");
 
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+c.width=window.innerWidth;
+c.height=window.innerHeight;
 
 let stars=[];
 
-for(let i=0;i<100;i++){
+for(let i=0;i<120;i++){
 stars.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
+x:Math.random()*c.width,
+y:Math.random()*c.height,
 r:Math.random()*1.5,
 s:Math.random()*0.5+0.2
 });
 }
 
 function animate(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.clearRect(0,0,c.width,c.height);
 ctx.fillStyle="white";
 
-stars.forEach(star=>{
+stars.forEach(s=>{
 ctx.beginPath();
-ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
+ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
 ctx.fill();
 
-star.y += star.s;
+s.y+=s.s;
 
-if(star.y>canvas.height){
-star.y=0;
-star.x=Math.random()*canvas.width;
+if(s.y>c.height){
+s.y=0;
+s.x=Math.random()*c.width;
 }
 });
 
