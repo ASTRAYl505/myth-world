@@ -2,7 +2,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:'Orbitron',sans-serif;
 }
 
 body{
@@ -15,7 +15,9 @@ overflow-x:hidden;
 .bg{
 position:fixed;
 inset:0;
-background:radial-gradient(circle at center,#001,#000);
+background:
+radial-gradient(circle at 20% 20%, rgba(0,229,255,0.08), transparent 40%),
+radial-gradient(circle at 80% 60%, rgba(255,0,200,0.05), transparent 40%);
 z-index:-1;
 }
 
@@ -31,11 +33,26 @@ text-align:center;
 
 .intro h1{
 font-size:60px;
-letter-spacing:4px;
 color:#00e5ff;
 text-shadow:0 0 20px #00e5ff;
 }
 
+.subtitle{
+opacity:0.7;
+margin-top:10px;
+font-size:14px;
+}
+
+.team{
+margin-top:20px;
+font-size:11px;
+opacity:0.8;
+color:#7df9ff;
+line-height:1.6;
+max-width:85%;
+}
+
+/* 🚀 BUTTON */
 button{
 margin-top:20px;
 padding:10px 25px;
@@ -44,51 +61,63 @@ background:#00e5ff;
 color:#000;
 font-weight:bold;
 cursor:pointer;
+border-radius:6px;
 }
 
-/* 🪐 TITLE */
-.title{
-text-align:center;
-margin:40px 0;
-color:#00e5ff;
-letter-spacing:3px;
-}
-
-/* 📦 GRID */
-.grid{
+/* 🪐 GRID */
+.nasa-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
-padding:20px;
+padding:40px 20px;
 }
 
-/* 🧊 NASA CARD */
-.card{
+/* 🧊 CARD */
+.nasa-card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(0,229,255,0.2);
-border-radius:15px;
+border-radius:14px;
 padding:15px;
 text-align:center;
 backdrop-filter:blur(12px);
 opacity:0;
 transform:translateY(30px);
 transition:0.6s;
+cursor:pointer;
 }
 
-.card.show{
+.nasa-card.show{
 opacity:1;
 transform:translateY(0);
 }
 
-.card img{
-width:90px;
-height:90px;
+.nasa-card img{
+width:85px;
+height:85px;
 object-fit:cover;
 margin-bottom:10px;
 }
 
-.card:hover{
+.nasa-card:hover{
 transform:scale(1.05);
 border-color:#00e5ff;
 box-shadow:0 0 20px rgba(0,229,255,0.3);
+}
+
+/* 🪐 POPUP */
+.popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,0.9);
+border:1px solid #00e5ff;
+padding:20px;
+border-radius:10px;
+text-align:center;
+z-index:999;
+}
+
+.popup.hidden{
+display:none;
 }
