@@ -13,7 +13,9 @@
 
 <header>
   <h1>MYTH WORLD</h1>
-  <p>A living archive of myths, gods, and ancient worlds</p>
+  <p>A living archive of myths, gods and forgotten worlds</p>
+
+  <input id="search" placeholder="Search Myth World..." onkeyup="searchCards()">
 </header>
 
 <nav>
@@ -26,31 +28,37 @@
 
 <main class="grid">
 
-  <section class="card">
-    <h2>🐉 Creatures</h2>
-    <p>Beasts from forgotten realms</p>
-  </section>
+  <div class="card" onclick="openCard('Dragon', 'A legendary fire beast that guards ancient realms.')">
+    <h2>🐉 Dragon</h2>
+    <p>Fire beast of legends</p>
+  </div>
 
-  <section class="card">
-    <h2>⚡ Gods</h2>
-    <p>Divine beings and powers</p>
-  </section>
+  <div class="card" onclick="openCard('Zeus', 'King of Olympus and god of thunder.')">
+    <h2>⚡ Zeus</h2>
+    <p>Ruler of Olympus</p>
+  </div>
 
-  <section class="card">
-    <h2>🏺 Civilizations</h2>
-    <p>Lost empires of history</p>
-  </section>
+  <div class="card" onclick="openCard('Atlantis', 'A lost advanced civilization beneath the ocean.')">
+    <h2>🏺 Atlantis</h2>
+    <p>Lost civilization</p>
+  </div>
 
-  <section class="card">
-    <h2>⏳ Timeline</h2>
-    <p>The history of all worlds</p>
-  </section>
+  <div class="card" onclick="openCard('Titan', 'Primordial beings that existed before the gods.')">
+    <h2>🌌 Titans</h2>
+    <p>Ancient entities</p>
+  </div>
 
 </main>
 
-<footer>
-  Myth World © 2026
-</footer>
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2 id="title"></h2>
+    <p id="desc"></p>
+    <button onclick="closeCard()">Close</button>
+  </div>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
