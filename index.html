@@ -6,6 +6,8 @@
 
 <title>Al-Wujood</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,50 +20,55 @@
 <section class="intro">
 
 <h1>Al-Wujood</h1>
-<p>NASA Style Solar System Interface</p>
+<p class="subtitle">NASA Space Exploration Interface</p>
+
+<div class="team">
+Osama Mohamed • Ahmed Al-khlil • Anas Al-abdolkarem • Thabet Hameed • Alyman Hamied<br>
+Damascus University - Computer Engineering & Automation
+</div>
 
 <button onclick="start()">ENTER SPACE</button>
 
 </section>
 
 <!-- 🪐 PLANETS -->
-<section class="nasa-section" id="planets">
+<section class="nasa-section">
 
 <h2 class="title">SOLAR SYSTEM</h2>
 
-<div class="grid">
+<div class="nasa-grid">
 
-<div class="card">
+<div class="nasa-card" onclick="openPlanet('Mercury','Smallest planet in the solar system')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg">
 <h3>Mercury</h3>
 <p>Smallest planet</p>
 </div>
 
-<div class="card">
+<div class="nasa-card" onclick="openPlanet('Venus','Hot toxic atmosphere')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Venus_-_real_color.jpg">
 <h3>Venus</h3>
-<p>Hot toxic atmosphere</p>
+<p>Hot planet</p>
 </div>
 
-<div class="card">
+<div class="nasa-card" onclick="openPlanet('Earth','Home of life 🌍')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg">
 <h3>Earth</h3>
 <p>Life planet</p>
 </div>
 
-<div class="card">
+<div class="nasa-card" onclick="openPlanet('Mars','Red dusty planet')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg">
 <h3>Mars</h3>
 <p>Red planet</p>
 </div>
 
-<div class="card">
+<div class="nasa-card" onclick="openPlanet('Jupiter','Largest gas giant')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg">
 <h3>Jupiter</h3>
 <p>Gas giant</p>
 </div>
 
-<div class="card">
+<div class="nasa-card" onclick="openPlanet('Saturn','Famous ring system')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg">
 <h3>Saturn</h3>
 <p>Ring planet</p>
@@ -70,6 +77,16 @@
 </div>
 
 </section>
+
+<!-- 🪐 POPUP -->
+<div id="popup" class="popup hidden">
+<h2 id="pname"></h2>
+<p id="pinfo"></p>
+<button onclick="closePopup()">Close</button>
+</div>
+
+<!-- 🔊 SOUND -->
+<audio id="spaceSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8f1a8f5.mp3"></audio>
 
 <script src="script.js"></script>
 
