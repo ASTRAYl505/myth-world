@@ -1,4 +1,4 @@
-ً<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,15 +13,18 @@
 
 <body>
 
+<!-- 🚀 LAUNCH -->
+<div class="launch" id="launch">
+<h1>NASA MISSION INITIALIZING...</h1>
+</div>
+
 <!-- 🌌 BACKGROUND -->
 <div class="bg"></div>
 
 <!-- 🌟 INTRO -->
 <section class="intro">
-
 <h1>Al-Wujood</h1>
-
-<p class="subtitle">NASA Space Exploration Interface</p>
+<p class="subtitle">Space Exploration System</p>
 
 <div class="team">
 Osama Mohamed • Ahmed Al-khlil • Anas Al-abdolkarem • Thabet Hameed • Alyman Hamied<br>
@@ -29,68 +32,64 @@ Damascus University - Computer Engineering & Automation
 </div>
 
 <button onclick="start()">ENTER SPACE</button>
-
 </section>
 
 <!-- 🪐 PLANETS -->
 <section class="nasa-section">
-
 <h2 class="title">SOLAR SYSTEM</h2>
 
 <div class="nasa-grid">
 
-<div class="nasa-card">
+<div class="nasa-card" onclick="openPlanet('Mercury')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg">
 <h3>Mercury</h3>
-<p>Smallest planet in the system</p>
+<p>View mission data</p>
 </div>
 
-<div class="nasa-card">
+<div class="nasa-card" onclick="openPlanet('Venus')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Venus_-_real_color.jpg">
 <h3>Venus</h3>
-<p>Hot toxic atmosphere</p>
+<p>View mission data</p>
 </div>
 
-<div class="nasa-card">
+<div class="nasa-card" onclick="openPlanet('Earth')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg">
 <h3>Earth</h3>
-<p>Home of life 🌍</p>
+<p>View mission data</p>
 </div>
 
-<div class="nasa-card">
+<div class="nasa-card" onclick="openPlanet('Mars')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg">
 <h3>Mars</h3>
-<p>Red dusty planet</p>
+<p>View mission data</p>
 </div>
 
-<div class="nasa-card">
+<div class="nasa-card" onclick="openPlanet('Jupiter')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg">
 <h3>Jupiter</h3>
-<p>Largest gas giant</p>
+<p>View mission data</p>
 </div>
 
-<div class="nasa-card">
+<div class="nasa-card" onclick="openPlanet('Saturn')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg">
 <h3>Saturn</h3>
-<p>Famous ring system</p>
+<p>View mission data</p>
 </div>
 
 </div>
-
 </section>
 
-<!-- 🌌 STAR LAYER -->
+<!-- 🌌 STARS -->
 <canvas id="stars"></canvas>
 
 <!-- 🪐 POPUP -->
 <div id="popup" class="popup hidden">
 <h2 id="pname"></h2>
-
-<img id="pimg" style="width:120px;border-radius:10px;margin:10px 0;display:none;">
-
 <div id="pinfo"></div>
-
 <button onclick="closePopup()">Close</button>
 </div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
