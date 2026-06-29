@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #05060a;
   color: white;
   overflow-x: hidden;
 }
 
-/* خلفية سينمائية */
+/* 🌌 عمق متحرك */
 .bg {
   position: fixed;
   width: 200%;
@@ -14,108 +14,84 @@ body {
   background: radial-gradient(circle at 20% 20%, gold, transparent 30%),
               radial-gradient(circle at 70% 40%, #6a00ff, transparent 35%),
               radial-gradient(circle at 40% 80%, #00d4ff, transparent 40%);
-  opacity: 0.15;
+  opacity: 0.18;
+  animation: float 12s infinite alternate;
   z-index: -1;
 }
 
-/* الهيدر */
+@keyframes float {
+  from { transform: translate(0,0) scale(1); }
+  to { transform: translate(-5%, -5%) scale(1.1); }
+}
+
+/* header */
 header {
   text-align: center;
-  padding: 80px 20px 20px;
+  padding: 70px 20px;
 }
 
 h1 {
   font-size: 70px;
-  letter-spacing: 5px;
   background: linear-gradient(90deg, gold, orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-p {
-  opacity: 0.8;
-}
-
-/* البحث */
-input {
-  margin-top: 15px;
-  padding: 10px;
-  width: 60%;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  text-align: center;
-}
-
-/* الناف */
+/* nav */
 nav {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 15px;
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(10px);
+  gap: 10px;
 }
 
-nav a {
+button {
+  padding: 10px;
+  border: none;
+  background: rgba(255,255,255,0.05);
   color: white;
-  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-nav a:hover {
-  color: gold;
+button:hover {
+  background: gold;
+  color: black;
 }
 
-/* الكروت */
+/* grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   padding: 50px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
 }
 
+/* cards */
 .card {
   background: rgba(255,255,255,0.05);
   padding: 25px;
   border-radius: 15px;
-  border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
+  text-align: center;
   cursor: pointer;
   transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 40px rgba(255,215,0,0.2);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255,215,0,0.3);
 }
 
-/* المودال */
-.modal {
-  display: none;
+/* side panel */
+#panel {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
+  right: -300px;
+  top: 20%;
+  width: 260px;
   background: #111;
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
-  border: 1px solid gold;
-}
-
-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
+  padding: 20px;
+  border-left: 2px solid gold;
+  transition: 0.4s;
 }
