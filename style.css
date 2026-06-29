@@ -28,7 +28,13 @@ animation-delay:1.5s;
 color:#00e5ff;
 font-size:18px;
 letter-spacing:3px;
-text-shadow:0 0 15px #00e5ff;
+text-shadow:0 0 20px #00e5ff;
+animation:glow 1.2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #00e5ff;}
+to{text-shadow:0 0 30px #00e5ff;}
 }
 
 @keyframes launchFade{
@@ -58,10 +64,10 @@ padding:20px;
 }
 
 .intro h1{
-font-size:62px;
+font-size:64px;
 color:#00e5ff;
 text-shadow:0 0 25px #00e5ff;
-letter-spacing:4px;
+letter-spacing:5px;
 }
 
 .subtitle{
@@ -93,8 +99,8 @@ transition:0.3s;
 }
 
 button:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px rgba(0,229,255,0.4);
+transform:scale(1.08);
+box-shadow:0 0 25px rgba(0,229,255,0.4);
 }
 
 /* 🪐 SECTION */
@@ -105,19 +111,19 @@ text-align:center;
 
 /* 🌌 TITLE */
 .title{
-font-size:28px;
-letter-spacing:5px;
+font-size:30px;
+letter-spacing:6px;
 color:#00e5ff;
-margin-bottom:30px;
-text-shadow:0 0 15px rgba(0,229,255,0.4);
+margin-bottom:35px;
+text-shadow:0 0 20px rgba(0,229,255,0.4);
 }
 
 /* 📦 GRID */
 .nasa-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
-padding:30px;
+gap:30px;
+padding:40px;
 }
 
 /* 🧊 CARD */
@@ -127,7 +133,7 @@ border:1px solid rgba(0,229,255,0.15);
 border-radius:16px;
 padding:18px;
 text-align:center;
-backdrop-filter:blur(14px);
+backdrop-filter:blur(16px);
 opacity:0;
 transform:translateY(40px);
 transition:0.7s ease;
@@ -140,30 +146,33 @@ transform:translateY(0);
 }
 
 .nasa-card img{
-width:85px;
-height:85px;
+width:90px;
+height:90px;
 object-fit:cover;
 margin-bottom:10px;
 border-radius:50%;
+border:1px solid rgba(0,229,255,0.2);
 }
 
 /* ✨ hover */
 .nasa-card:hover{
-transform:scale(1.06);
+transform:scale(1.07);
 border-color:#00e5ff;
-box-shadow:0 0 25px rgba(0,229,255,0.25);
+box-shadow:0 0 30px rgba(0,229,255,0.25);
 }
 
 /* 🪐 TEXT */
 .nasa-card h3{
 margin-top:5px;
 font-size:16px;
+color:#ffffff;
 }
 
 .nasa-card p{
 font-size:12px;
-opacity:0.7;
+opacity:0.75;
 margin-top:5px;
+color:#7df9ff;
 }
 
 /* 🪐 POPUP */
@@ -172,13 +181,19 @@ position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-background:rgba(0,0,0,0.92);
+background:rgba(0,0,0,0.95);
 border:1px solid #00e5ff;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 text-align:center;
 z-index:999;
-min-width:240px;
+min-width:260px;
+backdrop-filter:blur(10px);
+}
+
+.popup h2{
+color:#00e5ff;
+margin-bottom:10px;
 }
 
 .popup.hidden{
@@ -196,7 +211,7 @@ z-index:-3;
 @media(max-width:600px){
 
 .intro h1{
-font-size:38px;
+font-size:40px;
 }
 
 .team{
