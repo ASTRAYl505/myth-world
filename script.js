@@ -1,35 +1,43 @@
 const DB = {
-  Zeus: { type:"God", era:"Age of Gods", desc:"God of thunder and sky." },
-  Hades: { type:"God", era:"Age of Gods", desc:"Ruler of Underworld." },
-  Dragon: { type:"Myth", era:"Mythic Age", desc:"Ancient fire beast." },
-  Phoenix: { type:"Myth", era:"Mythic Age", desc:"Reborn from ashes." },
-  Luffy: { type:"Anime", era:"Fiction Layer", desc:"Pirate king." },
-  Eren: { type:"Anime", era:"Fiction Layer", desc:"Titan shifter." }
+Zeus: {
+  type: "God",
+  era: "Age of Gods",
+  desc: "God of thunder and sky.",
+  img: "https://cdn.pixabay.com/photo/2020/03/31/19/20/zeus-4989512_1280.jpg"
+},
+
+Hades: {
+  type: "God",
+  era: "Age of Gods",
+  desc: "Ruler of Underworld.",
+  img: "https://cdn.pixabay.com/photo/2021/05/20/13/35/underworld-6270143_1280.jpg"
+},
+
+Dragon: {
+  type: "Myth",
+  era: "Mythic Age",
+  desc: "Ancient fire beast.",
+  img: "https://cdn.pixabay.com/photo/2021/09/10/10/19/dragon-6613215_1280.jpg"
+},
+
+Phoenix: {
+  type: "Myth",
+  era: "Mythic Age",
+  desc: "Reborn from ashes.",
+  img: "https://cdn.pixabay.com/photo/2020/04/12/10/39/phoenix-5032706_1280.jpg"
+},
+
+Luffy: {
+  type: "Anime",
+  era: "Fiction Layer",
+  desc: "Pirate king fighter.",
+  img: "https://i.imgur.com/8Km9tLL.jpg"
+},
+
+Eren: {
+  type: "Anime",
+  era: "Fiction Layer",
+  desc: "Titan shifter.",
+  img: "https://i.imgur.com/9bX3x3Q.jpg"
+}
 };
-
-function openItem(name){
-  document.getElementById("name").innerText = name;
-  document.getElementById("meta").innerText =
-    DB[name].type + " | " + DB[name].era;
-  document.getElementById("desc").innerText =
-    DB[name].desc;
-
-  show("detail");
-}
-
-function show(id){
-  document.querySelectorAll("section").forEach(s => s.style.display="none");
-  document.getElementById(id).style.display="block";
-}
-
-function openCodex(){ show("codex"); }
-function openTimeline(){ show("timeline"); }
-function backHome(){ show("home"); }
-
-function search(){
-  let val = document.getElementById("search").value.toLowerCase();
-  document.querySelectorAll(".card").forEach(c=>{
-    c.style.display = c.innerText.toLowerCase().includes(val)
-      ? "block" : "none";
-  });
-}
