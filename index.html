@@ -4,40 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nebula Orbit - NASA System</title>
+<title>Myth World</title>
 
 <link rel="stylesheet" href="style.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
 </head>
 
 <body>
 
-<!-- 🚪 INTRO -->
-<div id="intro">
+<!-- 🌌 BACKGROUND -->
+<canvas id="stars"></canvas>
 
-<h1>الوجود</h1>
+<!-- 🎬 INTRO -->
+<div class="intro">
 
-<p class="team">
-Osama Mohamed • Ahmed Al-khlil • Anas Al-abdolkarem • Thabet Hameed • Alyman Hamied
-</p>
+<h1>MYTH WORLD</h1>
 
-<p class="uni">
-Damascus University - Computer Engineering & Automation
-</p>
+<p class="subtitle">Explore space & unknown worlds</p>
 
-<button onclick="start()">ENTER SPACE</button>
+<!-- 👇 TEAM INFO (مهم) -->
+<div class="team">
+<p>Osama Mohamed • Ahmed Al-khlil • Anas Al-abdolkarem • Thabet Hameed • Alyman Hamied</p>
+<p>Damascus University - Computer Engineering & Automation</p>
+</div>
+
+<button onclick="start()">ENTER</button>
 
 </div>
 
-<!-- 🪐 HUD -->
-<div id="planetHUD"></div>
+<!-- 📦 CONTENT -->
+<div class="container">
 
-<!-- 🎧 AUDIO -->
-<audio id="audio" loop>
-<source src="https://cdn.pixabay.com/audio/2022/10/16/audio_c8c8f1a8f5.mp3">
-</audio>
+<section class="card">
+<h2>About</h2>
+<p>Modern space exploration UI inspired by NASA aesthetics.</p>
+</section>
+
+<section class="card">
+<h2>Planets</h2>
+<p>Mercury • Venus • Earth • Mars • Jupiter • Saturn</p>
+</section>
+
+<section class="card">
+<h2>Mission</h2>
+<p>Explore the unknown universe through an immersive web experience.</p>
+</section>
+
+</div>
 
 <script src="script.js"></script>
 
