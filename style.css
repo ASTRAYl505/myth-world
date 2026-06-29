@@ -3,189 +3,79 @@ body {
   font-family: system-ui;
   background: #05060a;
   color: white;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-/* 🌌 CINEMATIC STAR DEPTH */
-.stars {
+/* 🌌 SPACE LAYERS */
+.space {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(white 1px, transparent 1px),
-    radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
-    radial-gradient(rgba(255,215,0,0.3) 1px, transparent 1px);
-  background-size: 70px 70px, 140px 140px, 220px 220px;
-  opacity: 0.2;
-  animation: drift 180s linear infinite;
-  z-index: -3;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.15;
+  animation: drift 120s linear infinite;
 }
 
 @keyframes drift {
   from { transform: translateY(0); }
-  to { transform: translateY(-3000px); }
+  to { transform: translateY(-2000px); }
 }
 
-/* 🌑 VIGNETTE CINEMA */
-.vignette {
+/* 🌟 GLOW FIELD */
+.glow {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle, transparent, rgba(0,0,0,0.92));
+  background: radial-gradient(circle at center, rgba(255,215,0,0.08), transparent 60%);
   pointer-events: none;
 }
 
-/* 🌠 CURSOR LIGHT */
-.cursor-light {
-  position: fixed;
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle, rgba(255,215,0,0.22), transparent 60%);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  mix-blend-mode: screen;
-}
-
-/* 🎬 INTRO CINEMATIC */
-#intro {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, #111, #000);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+/* UI */
+.ui {
   text-align: center;
-  overflow: hidden;
-}
-
-.cinematicGlow {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255,215,0,0.18), transparent 70%);
-  animation: pulse 5s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.4); opacity: 0.2; }
-  100% { transform: scale(1); opacity: 0.6; }
-}
-
-#intro h1 {
-  font-size: 85px;
-  color: gold;
-  letter-spacing: 6px;
-  text-shadow: 0 0 50px gold;
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.subtitle {
-  margin-top: 10px;
-  opacity: 0.7;
-}
-
-.creatorIntro {
-  margin-top: 20px;
-  opacity: 0.5;
+  padding: 20px;
 }
 
 /* 🌍 WORLD */
 #world {
-  display: none;
-  padding: 30px;
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  perspective: 1200px;
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 60px;
-  background: linear-gradient(90deg, gold, orange, white);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* INPUT */
-input {
-  margin-top: 15px;
-  padding: 10px;
-  width: 60%;
-  max-width: 420px;
-  border-radius: 12px;
-  border: none;
-  text-align: center;
-}
-
-/* NAV */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 20px 0;
-}
-
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.08);
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: gold;
-  color: black;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 15px;
-  max-width: 950px;
-  margin: auto;
-}
-
-/* CARDS CINEMATIC 3D */
-.card {
-  padding: 22px;
+/* 🧭 ERA NODE */
+.era {
+  position: absolute;
+  left: calc(var(--x) * 1%);
+  top: calc(var(--y) * 1%);
+  transform: translate(-50%, -50%);
+  
+  padding: 18px 22px;
   background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 14px;
-  text-align: center;
   cursor: pointer;
-  transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.12);
+  transition: 0.4s;
+  backdrop-filter: blur(8px);
 }
 
-.card:hover {
-  transform: perspective(1100px) rotateX(10deg) rotateY(-10deg) scale(1.1);
-  box-shadow: 0 0 60px rgba(255,215,0,0.35);
+.era:hover {
+  transform: translate(-50%, -50%) scale(1.2) rotateX(10deg);
+  box-shadow: 0 0 40px gold;
   border-color: gold;
 }
 
-/* PANEL CINEMATIC */
+/* 📦 PANEL */
 #panel {
   position: fixed;
-  right: -380px;
-  top: 18%;
+  right: -400px;
+  top: 25%;
   width: 300px;
-  background: rgba(10,10,15,0.9);
+  background: rgba(0,0,0,0.95);
   border-left: 2px solid gold;
-  padding: 18px;
-  border-radius: 14px 0 0 14px;
+  padding: 20px;
+  border-radius: 12px 0 0 12px;
   transition: 0.5s;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 80px rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
 }
