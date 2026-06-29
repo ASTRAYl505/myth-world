@@ -3,79 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Myth World - Cinematic Universe</title>
+<title>Myth World - Living Universe</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- 🎧 AUDIO -->
-<audio id="ambience" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_3c3a7b6b6c.mp3?filename=space-ambience-123141.mp3" type="audio/mp3">
-</audio>
+<div class="space"></div>
+<div class="glow"></div>
 
-<div class="stars"></div>
-<div class="cursor-light"></div>
-<div class="vignette"></div>
-
-<!-- 🎬 CINEMATIC INTRO -->
-<section id="intro" onclick="enterWorld()">
-
-  <div class="cinematicGlow"></div>
-
+<header class="ui">
   <h1>MYTH WORLD</h1>
-  <p>ENTER THE UNIVERSE</p>
+  <p>Living Interactive Universe</p>
+</header>
 
-  <div class="subtitle">
-    Where Legends Become Reality
+<!-- 🌍 WORLD CANVAS -->
+<div id="world">
+
+  <div class="era" style="--x:20; --y:30" onclick="openEra('Mythic Age','Before time existed')">
+    🌌 Mythic Age
   </div>
 
-  <small>Click anywhere to begin</small>
+  <div class="era" style="--x:60; --y:20" onclick="openEra('Age of Gods','Olympus domination')">
+    ⚡ Gods Age
+  </div>
 
-  <div class="creatorIntro">THABET HAMEED AL-JWIR</div>
-</section>
+  <div class="era" style="--x:40; --y:60" onclick="openEra('Medieval Age','Kings and castles')">
+    🏰 Medieval
+  </div>
 
-<!-- 🌍 WORLD -->
-<section id="world">
+  <div class="era" style="--x:70; --y:70" onclick="openEra('Ottoman Era','Empire expansion')">
+    🕌 Ottoman
+  </div>
 
-  <header class="hero">
-    <h1>MYTH WORLD</h1>
-    <p>Cinematic Codex Universe</p>
+  <div class="era" style="--x:30; --y:80" onclick="openEra('Victorian Era','Steam & science')">
+    🎩 Victorian
+  </div>
 
-    <div class="creator">
-      Created by <b>THABET HAMEED AL-JWIR</b>
-    </div>
+</div>
 
-    <input id="search" onkeyup="searchWorld()" placeholder="Search universe...">
-  </header>
-
-  <nav>
-    <button onclick="filter('all')">All</button>
-    <button onclick="filter('gods')">Gods</button>
-    <button onclick="filter('anime')">Anime</button>
-    <button onclick="filter('myth')">Myth</button>
-    <button onclick="filter('animals')">Animals</button>
-  </nav>
-
-  <main class="grid">
-
-    <div class="card gods" onclick="openPanel('Zeus','God of Thunder, ruler of skies')">⚡ Zeus</div>
-    <div class="card gods" onclick="openPanel('Hades','King of Underworld')">💀 Hades</div>
-
-    <div class="card myth" onclick="openPanel('Dragon','Ancient world destroyer')">🐉 Dragon</div>
-    <div class="card myth" onclick="openPanel('Phoenix','Immortal rebirth entity')">🔥 Phoenix</div>
-
-    <div class="card anime" onclick="openPanel('Luffy','Pirate King of the Sea')">🏴‍☠️ Luffy</div>
-    <div class="card anime" onclick="openPanel('Eren','Titan of Freedom')">⚔️ Eren</div>
-
-    <div class="card animals" onclick="openPanel('Lion','King of beasts')">🦁 Lion</div>
-    <div class="card animals" onclick="openPanel('Eagle','Sky predator')">🦅 Eagle</div>
-
-  </main>
-
-</section>
-
-<!-- 📦 PANEL -->
+<!-- 📦 DETAIL PANEL -->
 <div id="panel">
   <h2 id="title"></h2>
   <p id="desc"></p>
