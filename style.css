@@ -2,53 +2,122 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:Arial, sans-serif;
 }
 
 body{
-overflow:hidden;
-background:black;
-color:white;
+background:#000;
+color:#fff;
+overflow-x:hidden;
 }
 
-/* 🚪 INTRO */
-#intro{
+/* 🌌 BACKGROUND CANVAS */
+#stars{
 position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
+z-index:-1;
+}
+
+/* 🎬 INTRO */
+.intro{
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:black;
-z-index:10;
+background:radial-gradient(circle at center, rgba(0,255,255,0.08), transparent 60%);
+transition:0.8s ease;
 }
 
-#intro h1{
-font-size:60px;
+.intro h1{
+font-size:64px;
+letter-spacing:6px;
 text-shadow:0 0 20px #00e5ff;
 }
 
-button{
-margin-top:20px;
-padding:10px 20px;
-background:#00e5ff;
-border:none;
-font-weight:bold;
-cursor:pointer;
+.subtitle{
+margin-top:10px;
+opacity:0.7;
+font-size:16px;
 }
 
-/* 🪐 HUD */
-#planetHUD{
-position:fixed;
-top:20px;
-right:20px;
-width:300px;
-padding:15px;
-background:rgba(0,0,0,0.7);
-border:1px solid #00e5ff;
-border-radius:10px;
-display:none;
-z-index:20;
+/* 👥 TEAM */
+.team{
+margin-top:20px;
+font-size:13px;
+opacity:0.8;
+line-height:1.6;
+max-width:80%;
+}
+
+/* 🚪 BUTTON */
+button{
+margin-top:25px;
+padding:12px 28px;
+border:none;
+background:#00e5ff;
+color:#000;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+box-shadow:0 0 15px rgba(0,229,255,0.4);
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(0,229,255,0.7);
+}
+
+/* 📦 CONTENT */
+.container{
+padding:100px 20px;
+display:flex;
+flex-direction:column;
+gap:30px;
+max-width:900px;
+margin:auto;
+}
+
+/* 🧊 CARDS (glass effect) */
+.card{
+padding:25px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(0,229,255,0.2);
+border-radius:12px;
+backdrop-filter:blur(12px);
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card h2{
+color:#00e5ff;
+margin-bottom:10px;
+}
+
+/* 📱 MOBILE */
+@media(max-width:600px){
+
+.intro h1{
+font-size:40px;
+}
+
+.team{
+font-size:11px;
+}
+
+.container{
+padding:60px 15px;
+}
+
 }
