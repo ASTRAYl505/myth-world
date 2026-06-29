@@ -3,22 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Myth World</title>
+<title>Myth World - Cinematic Universe</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="stars"></div>
-<div class="cursor-glow"></div>
+<!-- 🎧 AUDIO -->
+<audio id="ambience" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_3c3a7b6b6c.mp3?filename=space-ambience-123141.mp3" type="audio/mp3">
+</audio>
 
-<!-- 🚪 INTRO -->
+<div class="stars"></div>
+<div class="cursor-light"></div>
+<div class="vignette"></div>
+
+<!-- 🎬 CINEMATIC INTRO -->
 <section id="intro" onclick="enterWorld()">
+
+  <div class="cinematicGlow"></div>
+
   <h1>MYTH WORLD</h1>
-  <p>Where Legends Come Alive</p>
-  <small>Tap to Enter</small>
-  <div class="creatorIntro">Osama Mohamed, Ahmed Al-khlil, Anas Al-abdolkarem,
-Thabet Hameed, and Alyman Hamied</div>
+  <p>ENTER THE UNIVERSE</p>
+
+  <div class="subtitle">
+    Where Legends Become Reality
+  </div>
+
+  <small>Click anywhere to begin</small>
+
+  <div class="creatorIntro">THABET HAMEED AL-JWIR</div>
 </section>
 
 <!-- 🌍 WORLD -->
@@ -26,7 +40,7 @@ Thabet Hameed, and Alyman Hamied</div>
 
   <header class="hero">
     <h1>MYTH WORLD</h1>
-    <p>Interactive Living Universe Codex</p>
+    <p>Cinematic Codex Universe</p>
 
     <div class="creator">
       Created by <b>THABET HAMEED AL-JWIR</b>
@@ -40,22 +54,22 @@ Thabet Hameed, and Alyman Hamied</div>
     <button onclick="filter('gods')">Gods</button>
     <button onclick="filter('anime')">Anime</button>
     <button onclick="filter('myth')">Myth</button>
-    button onclick="filter('animals')">Animals</button>
+    <button onclick="filter('animals')">Animals</button>
   </nav>
 
   <main class="grid">
 
-    <div class="card gods" onclick="openPanel('Zeus','God of Thunder')">⚡ Zeus</div>
-    <div class="card gods" onclick="openPanel('Hades','Lord of Underworld')">💀 Hades</div>
+    <div class="card gods" onclick="openPanel('Zeus','God of Thunder, ruler of skies')">⚡ Zeus</div>
+    <div class="card gods" onclick="openPanel('Hades','King of Underworld')">💀 Hades</div>
 
-    <div class="card myth" onclick="openPanel('Dragon','Ancient Fire Beast')">🐉 Dragon</div>
-    <div class="card myth" onclick="openPanel('Phoenix','Rebirth from Ashes')">🔥 Phoenix</div>
+    <div class="card myth" onclick="openPanel('Dragon','Ancient world destroyer')">🐉 Dragon</div>
+    <div class="card myth" onclick="openPanel('Phoenix','Immortal rebirth entity')">🔥 Phoenix</div>
 
-    <div class="card anime" onclick="openPanel('Luffy','Pirate King')">🏴‍☠️ Luffy</div>
-    <div class="card anime" onclick="openPanel('Eren','Titan Shifter')">⚔️ Eren</div>
+    <div class="card anime" onclick="openPanel('Luffy','Pirate King of the Sea')">🏴‍☠️ Luffy</div>
+    <div class="card anime" onclick="openPanel('Eren','Titan of Freedom')">⚔️ Eren</div>
 
-    <div class="card animals" onclick="openPanel('Lion','King of Beasts')">🦁 Lion</div>
-    <div class="card animals" onclick="openPanel('Eagle','Sky Hunter')">🦅 Eagle</div>
+    <div class="card animals" onclick="openPanel('Lion','King of beasts')">🦁 Lion</div>
+    <div class="card animals" onclick="openPanel('Eagle','Sky predator')">🦅 Eagle</div>
 
   </main>
 
