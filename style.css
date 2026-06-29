@@ -2,17 +2,16 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial;
 }
 
-/* 🌌 BACKGROUND */
 body{
 overflow:hidden;
-background:radial-gradient(circle at center, #000010, #000000);
+background:black;
 color:white;
 }
 
-/* 🚪 INTRO SCREEN */
+/* 🚪 INTRO */
 #intro{
 position:fixed;
 width:100%;
@@ -22,76 +21,34 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:rgba(0,0,0,0.9);
+background:black;
 z-index:10;
 }
 
 #intro h1{
 font-size:60px;
-letter-spacing:5px;
-color:#ffffff;
 text-shadow:0 0 20px #00e5ff;
-margin-bottom:20px;
 }
 
-.team{
-font-size:14px;
-opacity:0.8;
-margin-bottom:10px;
-}
-
-.uni{
-font-size:12px;
-opacity:0.6;
-margin-bottom:30px;
-}
-
-/* 🚀 ENTER BUTTON */
-#intro button{
-padding:12px 25px;
+button{
+margin-top:20px;
+padding:10px 20px;
 background:#00e5ff;
 border:none;
-color:black;
 font-weight:bold;
 cursor:pointer;
-border-radius:6px;
-transition:0.3s;
 }
 
-#intro button:hover{
-background:#ffffff;
-transform:scale(1.05);
-}
-
-/* 🪐 HUD PANEL */
+/* 🪐 HUD */
 #planetHUD{
 position:fixed;
 top:20px;
 right:20px;
-width:280px;
+width:300px;
 padding:15px;
 background:rgba(0,0,0,0.7);
 border:1px solid #00e5ff;
 border-radius:10px;
-color:white;
 display:none;
 z-index:20;
-backdrop-filter:blur(10px);
-box-shadow:0 0 20px rgba(0,229,255,0.3);
-}
-
-#planetHUD h2{
-color:#00e5ff;
-margin-bottom:10px;
-}
-
-#planetHUD p{
-font-size:13px;
-line-height:1.4;
-opacity:0.9;
-}
-
-/* 🌌 CANVAS (THREE.JS) */
-canvas{
-display:block;
 }
