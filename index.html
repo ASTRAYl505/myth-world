@@ -1,60 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Myth World - Living Universe</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myth World</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="bg"></div>
 <div class="stars"></div>
+<div class="cursor-glow"></div>
 
-<div class="hero">
+<!-- 🚪 INTRO -->
+<section id="intro" onclick="enterWorld()">
   <h1>MYTH WORLD</h1>
   <p>Where Legends Come Alive</p>
+  <small>Tap to Enter</small>
+  <div class="creatorIntro">Osama Mohamed, Ahmed Al-khlil, Anas Al-abdolkarem,
+Thabet Hameed, and Alyman Hamied</div>
+</section>
 
-  <div class="creator">
-    <span>Created by: <b>YOUR NAME</b></span>
-  </div>
+<!-- 🌍 WORLD -->
+<section id="world">
 
-  <input id="search" onkeyup="searchWorld()" placeholder="Search the universe...">
-</div>
-<header>
-  <h1>MYTH WORLD</h1>
-  <p>Living Interactive Universe</p>
+  <header class="hero">
+    <h1>MYTH WORLD</h1>
+    <p>Interactive Living Universe Codex</p>
 
-  <input id="search" onkeyup="searchWorld()" placeholder="Search the universe...">
-</header>
+    <div class="creator">
+      Created by <b>THABET HAMEED AL-JWIR</b>
+    </div>
 
-<nav>
-  <button onclick="filter('all')">All</button>
-  <button onclick="filter('gods')">Gods</button>
-  <button onclick="filter('anime')">Anime</button>
-  <button onclick="filter('myth')">Myth</button>
-  <button onclick="filter('animals')">Animals</button>
-</nav>
+    <input id="search" onkeyup="searchWorld()" placeholder="Search universe...">
+  </header>
 
-<main class="grid">
+  <nav>
+    <button onclick="filter('all')">All</button>
+    <button onclick="filter('gods')">Gods</button>
+    <button onclick="filter('anime')">Anime</button>
+    <button onclick="filter('myth')">Myth</button>
+    button onclick="filter('animals')">Animals</button>
+  </nav>
 
-  <div class="card gods" onclick="openPanel('Zeus','King of Olympus, god of thunder')">⚡ Zeus</div>
-  <div class="card gods" onclick="openPanel('Hades','Ruler of Underworld')">💀 Hades</div>
+  <main class="grid">
 
-  <div class="card myth" onclick="openPanel('Dragon','Fire guardian of ancient realms')">🐉 Dragon</div>
-  <div class="card myth" onclick="openPanel('Phoenix','Rebirth from ashes')">🔥 Phoenix</div>
+    <div class="card gods" onclick="openPanel('Zeus','God of Thunder')">⚡ Zeus</div>
+    <div class="card gods" onclick="openPanel('Hades','Lord of Underworld')">💀 Hades</div>
 
-  <div class="card anime" onclick="openPanel('Luffy','Pirate King of One Piece')">🏴‍☠️ Luffy</div>
-  <div class="card anime" onclick="openPanel('Eren','Attack Titan user')">⚔️ Eren</div>
-  <div class="card anime" onclick="openPanel('Light','Death Note owner')">📓 Light</div>
+    <div class="card myth" onclick="openPanel('Dragon','Ancient Fire Beast')">🐉 Dragon</div>
+    <div class="card myth" onclick="openPanel('Phoenix','Rebirth from Ashes')">🔥 Phoenix</div>
 
-  <div class="card animals" onclick="openPanel('Lion','King of beasts')">🦁 Lion</div>
-  <div class="card animals" onclick="openPanel('Eagle','Sky hunter')">🦅 Eagle</div>
+    <div class="card anime" onclick="openPanel('Luffy','Pirate King')">🏴‍☠️ Luffy</div>
+    <div class="card anime" onclick="openPanel('Eren','Titan Shifter')">⚔️ Eren</div>
 
-</main>
+    <div class="card animals" onclick="openPanel('Lion','King of Beasts')">🦁 Lion</div>
+    <div class="card animals" onclick="openPanel('Eagle','Sky Hunter')">🦅 Eagle</div>
 
-<!-- SIDE PANEL -->
+  </main>
+
+</section>
+
+<!-- 📦 PANEL -->
 <div id="panel">
   <h2 id="title"></h2>
   <p id="desc"></p>
