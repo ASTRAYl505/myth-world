@@ -5,71 +5,46 @@ background:black;
 font-family:Arial;
 }
 
-/* 🌌 NEBULA BACKGROUND FEEL */
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:radial-gradient(circle at 30% 30%, #2a00ff33, transparent 60%),
-radial-gradient(circle at 70% 70%, #00e5ff22, transparent 60%);
-z-index:0;
-}
-
-/* 🚪 INTRO */
+/* INTRO */
 #intro{
-position:fixed;
-inset:0;
-background:black;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-z-index:999;
-color:#00e5ff;
-opacity:1;
-transition:opacity 2.5s ease;
-text-shadow:0 0 25px #00e5ff;
-}
-
-#intro h1{
-font-size:75px;
-color:#00e5ff;
-text-shadow:0 0 40px #00e5ff;
-}
-
-#intro .team{
+position:absolute;
+z-index:10;
 color:white;
-font-size:14px;
-max-width:80%;
-opacity:0.8;
+text-align:center;
+width:100%;
+top:30%;
 }
 
-#intro .uni{
-color:#aaccff;
-font-size:13px;
-margin-bottom:20px;
-}
-
-#intro button{
-padding:15px 30px;
-border:none;
-border-radius:12px;
-background:#00e5ff;
-cursor:pointer;
-box-shadow:0 0 30px #00e5ff;
-}
-
-/* 🌌 INFO */
 #info{
 position:fixed;
-bottom:10px;
+top:10px;
 left:10px;
-right:10px;
-padding:10px;
 color:#00e5ff;
-background:#111;
-border-top:1px solid #00e5ff;
-text-align:center;
-box-shadow:0 0 20px #00e5ff;
+z-index:10;
+}
+
+/* SPACE LAYER */
+#nasaLayer{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+z-index:1;
+display:none;
+}
+
+/* HUD */
+#planetHUD{
+position:fixed;
+top:20px;
+right:20px;
+width:260px;
+padding:12px;
+background:rgba(0,0,0,0.6);
+border:1px solid #00e5ff;
+color:#00e5ff;
+box-shadow:0 0 25px #00e5ff;
+font-size:13px;
+display:none;
+z-index:9999;
 }
