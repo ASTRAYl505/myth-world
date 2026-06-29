@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Myth World - Expanded Codex</title>
+<title>الوجود</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 body{
 margin:0;
-font-family:system-ui;
-background:#05060a;
+font-family:'Cairo',system-ui;
+background:black;
+overflow:hidden;
 color:white;
-overflow-x:hidden;
+text-align:center;
 }
 
+/* 🌌 STARS */
 .stars{
 position:fixed;
 width:100%;
 height:100%;
-background:radial-gradient(white 1px,transparent 1px);
-background-size:80px 80px;
-opacity:0.12;
+background:radial-gradient(#ffffff33 1px,transparent 1px);
+background-size:90px 90px;
 animation:move 120s linear infinite;
+opacity:0.25;
 z-index:-1;
 }
 
@@ -30,71 +34,92 @@ from{transform:translateY(0);}
 to{transform:translateY(-2000px);}
 }
 
-/* HEADER */
-.hero{
-text-align:center;
-padding:50px 20px;
-}
-
-.hero h1{
-font-size:60px;
-color:gold;
-text-shadow:0 0 20px gold;
-}
-
-.hero p{
-opacity:0.8;
-}
-
-/* SECTION TITLE */
-.sectionTitle{
-text-align:center;
-margin:40px 0 10px;
-font-size:26px;
-color:gold;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-padding:30px;
-max-width:1300px;
-margin:auto;
-}
-
-/* CARD */
-.card{
-background:rgba(255,255,255,0.05);
-border-radius:16px;
-overflow:hidden;
-transition:0.3s;
-cursor:pointer;
-border:1px solid rgba(255,215,0,0.2);
-}
-
-.card:hover{
-transform:scale(1.05);
-box-shadow:0 0 30px gold;
-}
-
-.card img{
+/* 🎬 INTRO SCREEN */
+#intro{
+position:fixed;
 width:100%;
-height:190px;
-object-fit:cover;
+height:100%;
+background:black;
+z-index:9999;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 }
 
-.card h3{
-margin:10px;
+#title{
+font-size:70px;
+color:#00e5ff;
+text-shadow:0 0 30px #00e5ff,0 0 80px #7c4dff;
+animation:zoom 2s ease;
+}
+
+#subtitle{
+color:#aaa;
+margin-top:10px;
+}
+
+/* 🚀 SKIP BUTTON */
+#skip{
+position:absolute;
+bottom:30px;
+padding:10px 20px;
+background:#00e5ff;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* 🎬 STAR WARS CREDITS */
+.sw-wrapper{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+perspective:400px;
+z-index:9998;
+}
+
+.sw{
+position:absolute;
+bottom:-100%;
+width:100%;
+text-align:center;
 color:gold;
+transform:rotateX(25deg);
+animation:scroll 18s linear forwards;
 }
 
-.card p{
-margin:10px;
-font-size:13px;
-opacity:0.9;
-line-height:1.5;
+.sw h2{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.sw p{
+margin:10px 0;
+}
+
+@keyframes scroll{
+0%{bottom:-120%;}
+100%{bottom:120%;}
+}
+
+/* 🌍 MAIN */
+#main{
+display:none;
+padding:40px;
+}
+
+.show{
+display:block;
+}
+
+@keyframes zoom{
+from{transform:scale(0.5);opacity:0;}
+to{transform:scale(1);opacity:1;}
 }
 </style>
 </head>
@@ -103,117 +128,55 @@ line-height:1.5;
 
 <div class="stars"></div>
 
-<!-- 🌌 HEADER -->
-<div class="hero">
-<h1>MYTH WORLD</h1>
-<p>Expanded Universe Codex — Mythology • History • Creatures • Realms</p>
-
-<p>
-Created by: Osama Mohamed · Ahmed Al-khlil · Anas Al-abdolkarem · Thabet Hameed · Alyman Hamied
-</p>
+<!-- 🎬 INTRO -->
+<div id="intro">
+  <div id="title">الوجود</div>
+  <div id="subtitle">AL-WUJUD</div>
+  <button id="skip" onclick="start()">Skip Intro</button>
 </div>
 
-<!-- 🕰️ ERAS -->
-<div class="sectionTitle">🌍 WORLD ERAS (FULL EXPANDED TIMELINE)</div>
+<!-- 🎵 SOUND -->
+<audio id="sound" autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b7f7c0b8.mp3">
+</audio>
 
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-<h3>Mythic Age</h3>
-<p><b>Time:</b> Before time itself</p>
-<p><b>Events:</b> Birth of universes, formation of cosmic energy, creation of primordial beings and first gods.</p>
-<p><b>Impact:</b> Foundation of all reality layers and myth systems.</p>
+<!-- 🎬 CREDITS -->
+<div class="sw-wrapper" id="credits">
+  <div class="sw">
+    <h2>PROJECT CREDITS</h2>
+    <p>Osama Mohamed</p>
+    <p>Ahmed Al-khlil</p>
+    <p>Anas Al-abdolkarem</p>
+    <p>Thabet Hameed</p>
+    <p>Alyman Hamied</p>
+    <h2>THE WORLD OF EXISTENCE</h2>
+  </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1534447677768-be436bb09401">
-<h3>Age of Gods</h3>
-<p><b>Time:</b> 2000–400 BC</p>
-<p><b>Events:</b> Olympus rule, Titan war, divine punishment cycles, human creation myths.</p>
-<p><b>Impact:</b> Gods directly influenced Earth civilizations and laws of nature.</p>
+<!-- 🌍 MAIN CONTENT -->
+<div id="main">
+  <h1>الوجود</h1>
+  <p>موسوعة العصور والأساطير والكائنات</p>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be">
-<h3>Ancient Civilizations</h3>
-<p><b>Time:</b> 3000 BC – 500 AD</p>
-<p><b>Events:</b> Egyptian magic systems, Babylon prophecy, Greek mythology expansion.</p>
-<p><b>Impact:</b> First recorded myth systems and temples built for gods.</p>
-</div>
+<script>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1526779259212-939e64788e3c">
-<h3>Medieval Age</h3>
-<p><b>Time:</b> 500–1500 AD</p>
-<p><b>Events:</b> Dragon sightings, knight orders, cursed kingdoms, holy wars.</p>
-<p><b>Impact:</b> Myth creatures begin hiding from human kingdoms.</p>
-</div>
+function start(){
+document.getElementById("intro").style.display="none";
+document.getElementById("credits").style.display="none";
+document.getElementById("main").classList.add("show");
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
-<h3>Dark Age</h3>
-<p><b>Time:</b> 1400–1700 AD</p>
-<p><b>Events:</b> Vampires emerge, witch hunts, forbidden rituals, shadow societies.</p>
-<p><b>Impact:</b> Separation between human and supernatural worlds.</p>
-</div>
+let audio=document.getElementById("sound");
+audio.volume=0.5;
+audio.play();
+}
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
-<h3>Victorian Era</h3>
-<p><b>Time:</b> 1800–1900 AD</p>
-<p><b>Events:</b> Industrial science vs occult research, hidden monster investigations.</p>
-<p><b>Impact:</b> Scientific attempt to prove supernatural existence.</p>
-</div>
+// auto start after credits
+setTimeout(()=>{
+start();
+},18000);
 
-</div>
-
-<!-- 🧬 CREATURES -->
-<div class="sectionTitle">🧬 MYTHICAL CREATURES (EXPANDED FILES)</div>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://cdn.pixabay.com/photo/2020/03/31/19/20/zeus-4989512_1280.jpg">
-<h3>Zeus</h3>
-<p><b>Type:</b> God</p>
-<p><b>Origin:</b> Olympus Realm</p>
-<p><b>Era:</b> Age of Gods</p>
-<p><b>Abilities:</b> Thunder control, divine judgment, sky manipulation</p>
-<p><b>Story:</b> Supreme ruler of Olympus who defeated Titans and established divine order.</p>
-</div>
-
-<div class="card">
-<img src="https://cdn.pixabay.com/photo/2021/09/10/10/19/dragon-6613215_1280.jpg">
-<h3>Dragon</h3>
-<p><b>Type:</b> Ancient Beast</p>
-<p><b>Origin:</b> Pre-human Earth layers</p>
-<p><b>Era:</b> Mythic Age</p>
-<p><b>Abilities:</b> Fire breath, flight, extreme longevity</p>
-<p><b>Story:</b> Guardians of ancient realms that protected hidden energy cores of Earth.</p>
-</div>
-
-<div class="card">
-<img src="https://cdn.pixabay.com/photo/2017/01/31/13/14/vampire-2025473_1280.jpg">
-<h3>Vampire</h3>
-<p><b>Type:</b> Undead Entity</p>
-<p><b>Origin:</b> Dark European Myth</p>
-<p><b>Era:</b> Dark Age</p>
-<p><b>Abilities:</b> Immortality, regeneration, mind control</p>
-<p><b>Story:</b> Humans cursed by forbidden rituals that became eternal predators of night.</p>
-</div>
-
-<div class="card">
-<img src="https://cdn.pixabay.com/photo/2020/10/05/20/23/wolf-5630123_1280.jpg">
-<h3>Werewolf</h3>
-<p><b>Type:</b> Cursed Human</p>
-<p><b>Origin:</b> Lunar curse lineage</p>
-<p><b>Era:</b> Medieval Age</p>
-<p><b>Abilities:</b> Super strength, transformation, enhanced senses</p>
-<p><b>Story:</b> Humans cursed by moon cycles, becoming beasts under full moon nights.</p>
-</div>
-
-</div>
+</script>
 
 </body>
 </html>
