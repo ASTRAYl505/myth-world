@@ -1,0 +1,40 @@
+body {
+margin: 0;
+font-family: 'Arial', sans-serif;
+background: radial-gradient(circle at top, #0d0d0d, #000);
+color: white;
+}
+
+header {
+text-align: center;
+padding: 60px 20px;
+}
+
+h1 {
+font-size: 60px;
+color: gold;
+text-shadow: 0 0 20px gold;
+}
+
+p {
+font-size: 20px;
+opacity: 0.8;
+}
+
+nav {
+display: flex;
+justify-content: center;
+gap: 20px;
+padding: 15px;
+background: rgba(255,255,255,0.05);
+}
+
+nav a {
+color: white;
+text-decoration: none;
+transition: 0.3s;
+}
+
+nav a:hover {
+color: gold;
+}
