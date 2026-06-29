@@ -1,3 +1,9 @@
+function enterWorld() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("world").style.display = "block";
+}
+
+/* PANEL */
 function openPanel(title, desc) {
   document.getElementById("title").innerText = title;
   document.getElementById("desc").innerText = desc;
@@ -5,23 +11,22 @@ function openPanel(title, desc) {
 }
 
 function closePanel() {
-  document.getElementById("panel").style.right = "-300px";
+  document.getElementById("panel").style.right = "-320px";
 }
 
+/* FILTER */
 function filter(type) {
   let cards = document.querySelectorAll(".card");
 
   cards.forEach(card => {
-    if (type === "all") {
-      card.style.display = "block";
-    } else {
-      card.style.display = card.classList.contains(type)
+    card.style.display =
+      type === "all" || card.classList.contains(type)
         ? "block"
         : "none";
-    }
   });
 }
 
+/* SEARCH */
 function searchWorld() {
   let input = document.getElementById("search").value.toLowerCase();
   let cards = document.querySelectorAll(".card");
