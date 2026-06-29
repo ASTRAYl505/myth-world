@@ -2,102 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Al-Wujood Encyclopedia</title>
+<title>Cyber NASA Ultra Neon IMAX</title>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<link rel="stylesheet" href="style.css">
 
-<style>
-body{
-margin:0;
-font-family:Arial;
-background:black;
-color:white;
-overflow:hidden;
-}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-/* 🌌 header */
-#header{
-position:fixed;
-top:0;
-left:0;
-right:0;
-padding:10px;
-background:#000;
-color:#00e5ff;
-z-index:10;
-text-align:center;
-}
-
-/* 📚 eras */
-#eras{
-position:fixed;
-top:60px;
-left:10px;
-display:flex;
-flex-direction:column;
-gap:10px;
-z-index:10;
-}
-
-.era{
-padding:10px;
-background:#111;
-border:1px solid #00e5ff;
-cursor:pointer;
-border-radius:8px;
-}
-
-/* 📖 content */
-#content{
-position:fixed;
-right:10px;
-top:60px;
-bottom:10px;
-width:60%;
-overflow:auto;
-padding:10px;
-}
-
-/* 📦 cards */
-.card{
-background:#111;
-border:1px solid #00e5ff;
-margin-bottom:10px;
-padding:10px;
-border-radius:10px;
-cursor:pointer;
-}
-
-#details{
-position:fixed;
-bottom:10px;
-left:10px;
-right:10px;
-padding:10px;
-background:#111;
-border:1px solid #00e5ff;
-border-radius:10px;
-z-index:10;
-}
-</style>
+<!-- BLOOM -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
 </head>
 
 <body>
 
-<div id="header">🌌 Al-Wujood Interactive Encyclopedia</div>
+<!-- 🚪 INTRO -->
+<div id="intro">
+  <h1>الوجود</h1>
 
-<!-- 🌍 ERAS -->
-<div id="eras">
-<div class="era" onclick="loadEra('ancient')">Ancient</div>
-<div class="era" onclick="loadEra('myth')">Myth</div>
-<div class="era" onclick="loadEra('prophetic')">Prophetic</div>
+  <p class="team">
+    Osama Mohamed • Ahmed Al-khlil • Anas Al-abdolkarem • Thabet Hameed • Alyman Hamied
+  </p>
+
+  <p class="uni">
+    Department of Computer Engineering and Automation - Damascus University
+  </p>
+
+  <button onclick="start()">ENTER CYBER SPACE</button>
 </div>
 
-<!-- 📚 CONTENT -->
-<div id="content"></div>
+<div id="info">🌌 Cyber NASA Ultra Neon IMAX</div>
 
-<!-- 📖 DETAILS -->
-<div id="details">Select an item...</div>
+<!-- 🎧 CYBER SOUND -->
+<audio id="audio" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_c8c8f1a8f5.mp3" type="audio/mp3">
+</audio>
 
 <script src="script.js"></script>
 
