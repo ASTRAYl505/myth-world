@@ -7,11 +7,6 @@
 <link rel="stylesheet" href="style.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-<!-- BLOOM -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
 </head>
 
 <body>
@@ -33,9 +28,13 @@
 
 <div id="info">🌌 Cyber NASA Ultra Neon IMAX</div>
 
-<!-- 🎧 CYBER SOUND -->
+<!-- 🌌 NASA LAYER -->
+<canvas id="nasaLayer"></canvas>
+<div id="planetHUD"></div>
+
+<!-- 🎧 SOUND -->
 <audio id="audio" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_c8c8f1a8f5.mp3" type="audio/mp3">
+  <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_c8c8f1a8f5.mp3">
 </audio>
 
 <script src="script.js"></script>
