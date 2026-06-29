@@ -13,15 +13,12 @@
 
 <body>
 
-<!-- 🚀 LAUNCH -->
 <div class="launch" id="launch">
-<h1>NASA MISSION INITIALIZING...</h1>
+<h1>LOADING SPACE SYSTEM...</h1>
 </div>
 
-<!-- 🌌 BACKGROUND -->
 <div class="bg"></div>
 
-<!-- 🌟 INTRO -->
 <section class="intro">
 <h1>Al-Wujood</h1>
 <p class="subtitle">Space Exploration System</p>
@@ -34,7 +31,6 @@ Damascus University - Computer Engineering & Automation
 <button onclick="start()">ENTER SPACE</button>
 </section>
 
-<!-- 🪐 PLANETS -->
 <section class="nasa-section">
 <h2 class="title">SOLAR SYSTEM</h2>
 
@@ -43,49 +39,50 @@ Damascus University - Computer Engineering & Automation
 <div class="nasa-card" onclick="openPlanet('Mercury')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg">
 <h3>Mercury</h3>
-<p>View mission data</p>
+<p>Click for data</p>
 </div>
 
 <div class="nasa-card" onclick="openPlanet('Venus')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Venus_-_real_color.jpg">
 <h3>Venus</h3>
-<p>View mission data</p>
+<p>Click for data</p>
 </div>
 
 <div class="nasa-card" onclick="openPlanet('Earth')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg">
 <h3>Earth</h3>
-<p>View mission data</p>
+<p>Click for data</p>
 </div>
 
 <div class="nasa-card" onclick="openPlanet('Mars')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg">
 <h3>Mars</h3>
-<p>View mission data</p>
+<p>Click for data</p>
 </div>
 
 <div class="nasa-card" onclick="openPlanet('Jupiter')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg">
 <h3>Jupiter</h3>
-<p>View mission data</p>
+<p>Click for data</p>
 </div>
 
 <div class="nasa-card" onclick="openPlanet('Saturn')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg">
 <h3>Saturn</h3>
-<p>View mission data</p>
+<p>Click for data</p>
 </div>
 
 </div>
 </section>
 
-<!-- 🌌 STARS -->
+<!-- 🌌 STAR CANVAS -->
 <canvas id="stars"></canvas>
 
 <!-- 🪐 POPUP -->
 <div id="popup" class="popup hidden">
 <h2 id="pname"></h2>
-<div id="pinfo"></div>
+<img id="pimg" style="width:120px;border-radius:10px;margin:10px 0;">
+<p id="pinfo"></p>
 <button onclick="closePopup()">Close</button>
 </div>
 
