@@ -2,17 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Cyber NASA Ultra Neon IMAX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nebula Orbit - Solar System</title>
 
 <link rel="stylesheet" href="style.css">
 
+<!-- THREE.JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 </head>
 
 <body>
 
-<!-- 🚪 INTRO -->
+<!-- 🌌 INTRO SCREEN -->
 <div id="intro">
+
   <h1>الوجود</h1>
 
   <p class="team">
@@ -23,20 +28,19 @@
     Department of Computer Engineering and Automation - Damascus University
   </p>
 
-  <button onclick="start()">ENTER CYBER SPACE</button>
+  <button onclick="start()">ENTER NEBULA ORBIT</button>
+
 </div>
 
-<div id="info">🌌 Cyber NASA Ultra Neon IMAX</div>
-
-<!-- 🌌 CANVAS -->
-<canvas id="nasaLayer"></canvas>
+<!-- 🪐 HUD INFO PANEL -->
 <div id="planetHUD"></div>
 
-<!-- 🎧 AUDIO -->
+<!-- 🎧 SOUND -->
 <audio id="audio" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_c8c8f1a8f5.mp3">
+  <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_c8c8f1a8f5.mp3" type="audio/mp3">
 </audio>
 
+<!-- 🚀 THREE JS SCRIPT -->
 <script src="script.js"></script>
 
 </body>
