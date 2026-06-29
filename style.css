@@ -24,6 +24,13 @@ animation:launchFade 2s forwards;
 animation-delay:1.5s;
 }
 
+.launch h1{
+color:#00e5ff;
+font-size:18px;
+letter-spacing:3px;
+text-shadow:0 0 15px #00e5ff;
+}
+
 @keyframes launchFade{
 to{
 opacity:0;
@@ -47,26 +54,29 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding:20px;
 }
 
 .intro h1{
 font-size:62px;
 color:#00e5ff;
-text-shadow:0 0 20px #00e5ff;
+text-shadow:0 0 25px #00e5ff;
+letter-spacing:4px;
 }
 
 .subtitle{
 opacity:0.7;
 margin-top:10px;
+font-size:14px;
 }
 
 .team{
-font-size:11px;
-opacity:0.8;
-color:#7df9ff;
 margin-top:20px;
+font-size:11px;
+opacity:0.85;
+color:#7df9ff;
 line-height:1.6;
-max-width:85%;
+max-width:90%;
 }
 
 /* 🚀 BUTTON */
@@ -79,19 +89,40 @@ color:black;
 font-weight:bold;
 cursor:pointer;
 border-radius:6px;
+transition:0.3s;
 }
 
-/* 🪐 GRID */
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(0,229,255,0.4);
+}
+
+/* 🪐 SECTION */
+.nasa-section{
+padding-top:60px;
+text-align:center;
+}
+
+/* 🌌 TITLE */
+.title{
+font-size:28px;
+letter-spacing:5px;
+color:#00e5ff;
+margin-bottom:30px;
+text-shadow:0 0 15px rgba(0,229,255,0.4);
+}
+
+/* 📦 GRID */
 .nasa-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:30px;
-padding:60px 30px;
+gap:25px;
+padding:30px;
 }
 
 /* 🧊 CARD */
 .nasa-card{
-background:rgba(255,255,255,0.03);
+background:rgba(255,255,255,0.04);
 border:1px solid rgba(0,229,255,0.15);
 border-radius:16px;
 padding:18px;
@@ -99,7 +130,7 @@ text-align:center;
 backdrop-filter:blur(14px);
 opacity:0;
 transform:translateY(40px);
-transition:0.7s;
+transition:0.7s ease;
 cursor:pointer;
 }
 
@@ -109,16 +140,30 @@ transform:translateY(0);
 }
 
 .nasa-card img{
-width:90px;
-height:90px;
+width:85px;
+height:85px;
 object-fit:cover;
 margin-bottom:10px;
+border-radius:50%;
 }
 
+/* ✨ hover */
 .nasa-card:hover{
 transform:scale(1.06);
-box-shadow:0 0 25px rgba(0,229,255,0.3);
 border-color:#00e5ff;
+box-shadow:0 0 25px rgba(0,229,255,0.25);
+}
+
+/* 🪐 TEXT */
+.nasa-card h3{
+margin-top:5px;
+font-size:16px;
+}
+
+.nasa-card p{
+font-size:12px;
+opacity:0.7;
+margin-top:5px;
 }
 
 /* 🪐 POPUP */
@@ -127,23 +172,40 @@ position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.92);
 border:1px solid #00e5ff;
 padding:20px;
 border-radius:10px;
 text-align:center;
 z-index:999;
+min-width:240px;
 }
 
 .popup.hidden{
 display:none;
 }
 
-/* 🌟 TITLE */
-.title{
-text-align:center;
-font-size:30px;
-letter-spacing:5px;
-color:#00e5ff;
-margin-top:40px;
+/* 🌌 STAR CANVAS */
+#stars{
+position:fixed;
+inset:0;
+z-index:-3;
+}
+
+/* 📱 MOBILE */
+@media(max-width:600px){
+
+.intro h1{
+font-size:38px;
+}
+
+.team{
+font-size:10px;
+}
+
+.nasa-grid{
+padding:15px;
+gap:15px;
+}
+
 }
