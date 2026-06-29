@@ -1,84 +1,76 @@
-/* 🚀 LAUNCH SCREEN */
 window.addEventListener("load",()=>{
 
 setTimeout(()=>{
 document.getElementById("launch").style.display="none";
-},1800);
+},1500);
 
-/* 🪐 cards animation */
+/* 🪐 animate cards */
 document.querySelectorAll(".nasa-card").forEach((card,i)=>{
 setTimeout(()=>{
 card.classList.add("show");
-}, i * 180);
+}, i * 150);
 });
 
-/* 🌌 start stars */
 startStars();
 
 });
 
-/* 🚀 START BUTTON */
+/* 🚀 intro */
 function start(){
 document.querySelector(".intro").style.display="none";
 }
 
-/* 🪐 PLANET DATA */
+/* 🪐 FULL NASA DATA */
 const planets = {
 
-Mercury: `
-<b>Type:</b> Terrestrial<br>
-<b>Distance:</b> 57.9 million km<br>
-<b>Day:</b> 59 Earth days<br>
-<b>Year:</b> 88 days<br>
-<b>Facts:</b> No atmosphere, extreme heat & cold
-`,
+Mercury: {
+info:"Closest planet to the Sun. No atmosphere. Extreme heat and cold.",
+img:"https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg"
+},
 
-Venus: `
-<b>Type:</b> Terrestrial<br>
-<b>Distance:</b> 108.2 million km<br>
-<b>Day:</b> 243 days<br>
-<b>Year:</b> 225 days<br>
-<b>Facts:</b> Thick toxic CO₂ atmosphere, hottest planet
-`,
+Venus: {
+info:"Hottest planet. Thick toxic CO₂ atmosphere with acid clouds.",
+img:"https://upload.wikimedia.org/wikipedia/commons/3/3d/Venus_-_real_color.jpg"
+},
 
-Earth: `
-<b>Type:</b> Terrestrial<br>
-<b>Distance:</b> 149.6 million km<br>
-<b>Day:</b> 24 hours<br>
-<b>Year:</b> 365 days<br>
-<b>Facts:</b> Only known life planet 🌍
-`,
+Earth: {
+info:"Only known planet with life. 71% water and breathable atmosphere.",
+img:"https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg"
+},
 
-Mars: `
-<b>Type:</b> Terrestrial<br>
-<b>Distance:</b> 227.9 million km<br>
-<b>Day:</b> 24.6 hours<br>
-<b>Year:</b> 687 days<br>
-<b>Facts:</b> Red planet, iron oxide surface
-`,
+Mars: {
+info:"Red planet with iron-rich soil. Evidence of past water.",
+img:"https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg"
+},
 
-Jupiter: `
-<b>Type:</b> Gas Giant<br>
-<b>Distance:</b> 778 million km<br>
-<b>Facts:</b> Largest planet, Great Red Spot storm
-`,
+Jupiter: {
+info:"Largest planet. Gas giant with giant storm (Great Red Spot).",
+img:"https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg"
+},
 
-Saturn: `
-<b>Type:</b> Gas Giant<br>
-<b>Distance:</b> 1.4 billion km<br>
-<b>Facts:</b> Famous ring system made of ice & rock
-`
+Saturn: {
+info:"Famous for its rings made of ice and rock particles.",
+img:"https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg"
+}
 
 };
 
-/* 🪐 OPEN POPUP */
+/* 🪐 OPEN PLANET */
 function openPlanet(name){
+
 document.getElementById("popup").classList.remove("hidden");
+
 document.getElementById("pname").innerText = name;
-document.getElementById("pinfo").innerHTML = planets[name];
+document.getElementById("pinfo").innerText = planets[name].info;
+
+/* image */
+const img = document.getElementById("pimg");
+img.src = planets[name].img;
+img.style.display = "block";
+
 }
 
-/* ❌ CLOSE POPUP */
+/* ❌ CLOSE */
 function closePopup(){
 document.getElementById("popup").classList.add("hidden");
 }
@@ -86,27 +78,26 @@ document.getElementById("popup").classList.add("hidden");
 /* 🌌 STAR SYSTEM */
 function startStars(){
 
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d");
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
-let stars = [];
+let stars=[];
 
 for(let i=0;i<120;i++){
 stars.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 r:Math.random()*1.5,
-s:Math.random()*0.6+0.2
+s:Math.random()*0.5+0.2
 });
 }
 
 function animate(){
 
 ctx.clearRect(0,0,canvas.width,canvas.height);
-
 ctx.fillStyle="white";
 
 stars.forEach(star=>{
@@ -126,5 +117,4 @@ requestAnimationFrame(animate);
 }
 
 animate();
-
 }
