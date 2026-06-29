@@ -6,54 +6,95 @@ body {
   overflow-x: hidden;
 }
 
-/* 🌌 STARS REAL DEPTH */
+/* 🌌 CINEMATIC STAR DEPTH */
 .stars {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 60px 60px;
-  opacity: 0.15;
-  animation: move 120s linear infinite;
-  z-index: -1;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
+    radial-gradient(rgba(255,215,0,0.3) 1px, transparent 1px);
+  background-size: 70px 70px, 140px 140px, 220px 220px;
+  opacity: 0.2;
+  animation: drift 180s linear infinite;
+  z-index: -3;
 }
 
-@keyframes move {
+@keyframes drift {
   from { transform: translateY(0); }
-  to { transform: translateY(-1500px); }
+  to { transform: translateY(-3000px); }
 }
 
-/* 🌠 CURSOR GLOW */
-.cursor-glow {
+/* 🌑 VIGNETTE CINEMA */
+.vignette {
   position: fixed;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(255,215,0,0.2), transparent 60%);
+  inset: 0;
+  background: radial-gradient(circle, transparent, rgba(0,0,0,0.92));
+  pointer-events: none;
+}
+
+/* 🌠 CURSOR LIGHT */
+.cursor-light {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(255,215,0,0.22), transparent 60%);
   pointer-events: none;
   transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
 }
 
-/* 🚪 INTRO */
+/* 🎬 INTRO CINEMATIC */
 #intro {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle, #111, #000);
+  background: radial-gradient(circle at center, #111, #000);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cinematicGlow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,215,0,0.18), transparent 70%);
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 0.2; }
+  100% { transform: scale(1); opacity: 0.6; }
 }
 
 #intro h1 {
-  font-size: 70px;
+  font-size: 85px;
   color: gold;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
+  text-shadow: 0 0 50px gold;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.subtitle {
+  margin-top: 10px;
+  opacity: 0.7;
 }
 
 .creatorIntro {
   margin-top: 20px;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 /* 🌍 WORLD */
@@ -68,8 +109,8 @@ body {
 }
 
 .hero h1 {
-  font-size: 55px;
-  background: linear-gradient(90deg, gold, orange);
+  font-size: 60px;
+  background: linear-gradient(90deg, gold, orange, white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -79,8 +120,8 @@ input {
   margin-top: 15px;
   padding: 10px;
   width: 60%;
-  max-width: 400px;
-  border-radius: 10px;
+  max-width: 420px;
+  border-radius: 12px;
   border: none;
   text-align: center;
 }
@@ -89,7 +130,7 @@ input {
 nav {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   margin: 20px 0;
 }
 
@@ -113,36 +154,38 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 15px;
-  max-width: 900px;
+  max-width: 950px;
   margin: auto;
 }
 
-/* CARDS */
+/* CARDS CINEMATIC 3D */
 .card {
-  padding: 20px;
+  padding: 22px;
   background: rgba(255,255,255,0.05);
   border-radius: 14px;
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
 .card:hover {
-  transform: translateY(-12px) scale(1.06);
-  box-shadow: 0 0 35px rgba(255,215,0,0.3);
+  transform: perspective(1100px) rotateX(10deg) rotateY(-10deg) scale(1.1);
+  box-shadow: 0 0 60px rgba(255,215,0,0.35);
+  border-color: gold;
 }
 
-/* PANEL */
+/* PANEL CINEMATIC */
 #panel {
   position: fixed;
-  right: -340px;
+  right: -380px;
   top: 18%;
-  width: 280px;
-  background: rgba(10,10,15,0.95);
+  width: 300px;
+  background: rgba(10,10,15,0.9);
   border-left: 2px solid gold;
-  padding: 15px;
-  border-radius: 12px 0 0 12px;
-  transition: 0.4s;
-  backdrop-filter: blur(10px);
+  padding: 18px;
+  border-radius: 14px 0 0 14px;
+  transition: 0.5s;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 80px rgba(0,0,0,0.8);
 }
