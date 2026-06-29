@@ -13,14 +13,20 @@
 
 <body>
 
+<!-- 🚀 LAUNCH SCREEN -->
+<div class="launch" id="launch">
+<h1>Initializing Mission...</h1>
+</div>
+
 <!-- 🌌 BACKGROUND -->
 <div class="bg"></div>
 
-<!-- 🎬 INTRO -->
+<!-- 🌟 INTRO -->
 <section class="intro">
 
 <h1>Al-Wujood</h1>
-<p class="subtitle">NASA Space Exploration Interface</p>
+
+<p class="subtitle">SpaceX × NASA Exploration Interface</p>
 
 <div class="team">
 Osama Mohamed • Ahmed Al-khlil • Anas Al-abdolkarem • Thabet Hameed • Alyman Hamied<br>
@@ -50,7 +56,7 @@ Damascus University - Computer Engineering & Automation
 <p>Hot planet</p>
 </div>
 
-<div class="nasa-card" onclick="openPlanet('Earth','Home of life 🌍')">
+<div class="nasa-card" onclick="openPlanet('Earth','Life exists here 🌍')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg">
 <h3>Earth</h3>
 <p>Life planet</p>
@@ -78,15 +84,15 @@ Damascus University - Computer Engineering & Automation
 
 </section>
 
+<!-- 🌌 STAR CANVAS -->
+<canvas id="stars"></canvas>
+
 <!-- 🪐 POPUP -->
 <div id="popup" class="popup hidden">
 <h2 id="pname"></h2>
 <p id="pinfo"></p>
 <button onclick="closePopup()">Close</button>
 </div>
-
-<!-- 🔊 SOUND -->
-<audio id="spaceSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8f1a8f5.mp3"></audio>
 
 <script src="script.js"></script>
 
