@@ -1,6 +1,16 @@
+const audio = document.getElementById("ambience");
+
 function enterWorld() {
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("world").style.display = "block";
+  document.getElementById("intro").style.opacity = "0";
+
+  setTimeout(() => {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("world").style.display = "block";
+  }, 600);
+
+  // 🎧 start sound
+  audio.volume = 0.4;
+  audio.play();
 }
 
 /* PANEL */
@@ -11,7 +21,7 @@ function openPanel(title, desc) {
 }
 
 function closePanel() {
-  document.getElementById("panel").style.right = "-340px";
+  document.getElementById("panel").style.right = "-380px";
 }
 
 /* FILTER */
@@ -37,7 +47,7 @@ function searchWorld() {
 
 /* CURSOR LIGHT */
 document.addEventListener("mousemove", (e) => {
-  const glow = document.querySelector(".cursor-glow");
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
+  const light = document.querySelector(".cursor-light");
+  light.style.left = e.clientX + "px";
+  light.style.top = e.clientY + "px";
 });
