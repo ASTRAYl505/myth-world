@@ -3,74 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Myth World - Final Universe</title>
+<title>Myth World - Legendary Codex</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="stars"></div>
-
-<!-- 🌌 INTRO -->
-<section id="home">
+<header class="hero">
   <h1>MYTH WORLD</h1>
-  <p>Where Legends, History & Fiction Merge</p>
+  <p>Ultimate Living Universe Codex</p>
 
-  <button onclick="openCodex()">Open Codex</button>
-  <button onclick="openTimeline()">View Timeline</button>
-</section>
-
-<!-- 📚 CODEX -->
-<section id="codex">
-
-  <div class="topbar">
-    <h2>Codex</h2>
-    <input id="search" onkeyup="search()" placeholder="Search...">
-    <button onclick="backHome()">Back</button>
+  <!-- 👑 CREDITS -->
+  <div style="margin-top:15px; font-size:14px; opacity:0.8;">
+    Created by:  
+    <b>Osama Mohamed</b> ·
+    <b>Ahmed Al-khlil</b> ·
+    <b>Anas Al-abdolkarem</b> ·
+    <b>Thabet Hameed</b> ·
+    <b>Alyman Hamied</b>
   </div>
+</header>
 
-  <div class="grid">
+<!-- 🔍 SEARCH -->
+<input id="search" placeholder="Search myth, gods, creatures..." onkeyup="search()">
 
-    <div class="card" onclick="openItem('Zeus')">⚡ Zeus</div>
-    <div class="card" onclick="openItem('Hades')">💀 Hades</div>
-    <div class="card" onclick="openItem('Dragon')">🐉 Dragon</div>
-    <div class="card" onclick="openItem('Phoenix')">🔥 Phoenix</div>
-    <div class="card" onclick="openItem('Luffy')">🏴‍☠️ Luffy</div>
-    <div class="card" onclick="openItem('Eren')">⚔️ Eren</div>
-    <div class="card" onclick="openItem('Lion')">🦁 Lion</div>
-    <div class="card" onclick="openItem('Eagle')">🦅 Eagle</div>
+<!-- 📚 CODEx GRID -->
+<div class="grid" id="grid"></div>
 
-  </div>
-</section>
+<!-- 📦 DETAILS PANEL -->
+<div id="panel">
+  <h2 id="name"></h2>
 
-<!-- 🧬 DETAILS -->
-<section id="detail">
-  <h1 id="name"></h1>
+  <img id="img" style="width:100%; border-radius:12px; margin:10px 0;">
+
   <p id="meta"></p>
   <p id="desc"></p>
-  <button onclick="openCodex()">Back</button>
-</section>
 
-<!-- 🕰️ TIMELINE -->
-<section id="timeline">
-
-  <h2>World Timeline</h2>
-
-  <div class="timelineBox">
-    <p>🌌 Mythic Age — Before time</p>
-    <p>⚡ Age of Gods — Zeus & Olympus</p>
-    <p>🏺 Ancient Civilizations — Egypt, Greece, Babylon</p>
-    <p>🏰 Medieval Age — Knights & kingdoms</p>
-    <p>🕌 Ottoman Era — Empire expansion</p>
-    <p>🎩 Victorian Era — Steam & science</p>
-    <p>⚙️ Industrial Age — Machines & revolution</p>
-    <p>🌍 Modern Age — Technology era</p>
-    <p>🎌 Fiction Layer — Anime & myths</p>
-  </div>
-
-  <button onclick="backHome()">Back</button>
-</section>
+  <button onclick="closePanel()">Close</button>
+</div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
