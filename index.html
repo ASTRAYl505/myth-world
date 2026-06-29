@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Myth World</title>
+  <title>Myth World - Living Universe</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,50 +13,41 @@
 
 <header>
   <h1>MYTH WORLD</h1>
-  <p>A living archive of myths, gods and forgotten worlds</p>
+  <p>Living Interactive Universe</p>
 
-  <input id="search" placeholder="Search Myth World..." onkeyup="searchCards()">
+  <input id="search" onkeyup="searchWorld()" placeholder="Search the universe...">
 </header>
 
 <nav>
-  <a href="#">Home</a>
-  <a href="#">Creatures</a>
-  <a href="#">Gods</a>
-  <a href="#">Civilizations</a>
-  <a href="#">Timeline</a>
+  <button onclick="filter('all')">All</button>
+  <button onclick="filter('gods')">Gods</button>
+  <button onclick="filter('anime')">Anime</button>
+  <button onclick="filter('myth')">Myth</button>
+  <button onclick="filter('animals')">Animals</button>
 </nav>
 
 <main class="grid">
 
-  <div class="card" onclick="openCard('Dragon', 'A legendary fire beast that guards ancient realms.')">
-    <h2>🐉 Dragon</h2>
-    <p>Fire beast of legends</p>
-  </div>
+  <div class="card gods" onclick="openPanel('Zeus','King of Olympus, god of thunder')">⚡ Zeus</div>
+  <div class="card gods" onclick="openPanel('Hades','Ruler of Underworld')">💀 Hades</div>
 
-  <div class="card" onclick="openCard('Zeus', 'King of Olympus and god of thunder.')">
-    <h2>⚡ Zeus</h2>
-    <p>Ruler of Olympus</p>
-  </div>
+  <div class="card myth" onclick="openPanel('Dragon','Fire guardian of ancient realms')">🐉 Dragon</div>
+  <div class="card myth" onclick="openPanel('Phoenix','Rebirth from ashes')">🔥 Phoenix</div>
 
-  <div class="card" onclick="openCard('Atlantis', 'A lost advanced civilization beneath the ocean.')">
-    <h2>🏺 Atlantis</h2>
-    <p>Lost civilization</p>
-  </div>
+  <div class="card anime" onclick="openPanel('Luffy','Pirate King of One Piece')">🏴‍☠️ Luffy</div>
+  <div class="card anime" onclick="openPanel('Eren','Attack Titan user')">⚔️ Eren</div>
+  <div class="card anime" onclick="openPanel('Light','Death Note owner')">📓 Light</div>
 
-  <div class="card" onclick="openCard('Titan', 'Primordial beings that existed before the gods.')">
-    <h2>🌌 Titans</h2>
-    <p>Ancient entities</p>
-  </div>
+  <div class="card animals" onclick="openPanel('Lion','King of beasts')">🦁 Lion</div>
+  <div class="card animals" onclick="openPanel('Eagle','Sky hunter')">🦅 Eagle</div>
 
 </main>
 
-<!-- Modal -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <h2 id="title"></h2>
-    <p id="desc"></p>
-    <button onclick="closeCard()">Close</button>
-  </div>
+<!-- SIDE PANEL -->
+<div id="panel">
+  <h2 id="title"></h2>
+  <p id="desc"></p>
+  <button onclick="closePanel()">Close</button>
 </div>
 
 <script src="script.js"></script>
