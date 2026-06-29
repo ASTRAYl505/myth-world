@@ -4,64 +4,247 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Myth World - Complete Universe</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+margin:0;
+font-family:system-ui;
+background:#05060a;
+color:white;
+overflow-x:hidden;
+}
+
+/* 🌌 BACKGROUND */
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(white 1px,transparent 1px);
+background-size:80px 80px;
+opacity:0.15;
+animation:move 120s linear infinite;
+z-index:-1;
+}
+
+@keyframes move{
+from{transform:translateY(0);}
+to{transform:translateY(-2000px);}
+}
+
+/* 🎬 INTRO */
+#intro{
+text-align:center;
+padding:60px 20px;
+}
+
+#intro h1{
+color:gold;
+font-size:50px;
+}
+
+#intro button{
+display:block;
+margin:10px auto;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:gold;
+font-weight:bold;
+}
+
+/* 🔍 SEARCH */
+.searchBox{
+text-align:center;
+margin:20px;
+}
+
+#search{
+padding:10px;
+width:60%;
+border-radius:10px;
+border:none;
+}
+
+/* 📚 GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
+padding:20px;
+display:none;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border-radius:12px;
+padding:10px;
+cursor:pointer;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px gold;
+}
+
+.card img{
+width:100%;
+height:110px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* 🕰️ TIMELINE */
+.timeline{
+max-width:800px;
+margin:auto;
+padding:20px;
+display:none;
+}
+
+/* 📦 PANEL */
+#panel{
+position:fixed;
+right:-420px;
+top:15%;
+width:320px;
+background:black;
+border-left:2px solid gold;
+padding:15px;
+transition:0.4s;
+}
+</style>
 </head>
 
 <body>
 
-<!-- 🌌 HEADER -->
-<header class="hero">
-  <h1>MYTH WORLD</h1>
-  <p>Complete Universe: Myths, Creatures & Historical Ages</p>
+<div class="stars"></div>
 
-  <div class="credits">
-    Created by:
-    <b>Osama Mohamed</b> ·
-    <b>Ahmed Al-khlil</b> ·
-    <b>Anas Al-abdolkarem</b> ·
-    <b>Thabet Hameed</b> ·
-    <b>Alyman Hamied</b>
-  </div>
-</header>
+<!-- 🎬 INTRO -->
+<div id="intro">
 
-<!-- 🕰️ TIMELINE (FULL HISTORY) -->
-<div class="timelineBox">
+<h1>MYTH WORLD</h1>
+<p>Where Legends, Gods & History Come Alive</p>
 
-  <h2>🌍 World Timeline</h2>
+<h3>What do you want to explore?</h3>
 
-  <p>🌌 <b>Mythic Age</b> — Before time existed (Pre-history, creation myths)</p>
-  <p>⚡ <b>Age of Gods</b> — 2000–400 BC (Zeus, Olympus, divine wars)</p>
-  <p>🏺 <b>Ancient Civilizations</b> — 3000 BC – 500 AD (Egypt, Greece, Babylon)</p>
-  <p>🏰 <b>Medieval Age</b> — 500–1500 AD (Knights, dragons, wars)</p>
-  <p>🧛 <b>Dark Age</b> — 1400–1700 AD (Vampires, curses, myths rise)</p>
-  <p>🎩 <b>Victorian Era</b> — 1800–1900 AD (Steam, science, hidden creatures)</p>
-  <p>⚙️ <b>Industrial Age</b> — 1900–1950 AD (Machines vs nature)</p>
-  <p>🌍 <b>Modern Age</b> — 1950–Now (Technology era)</p>
-  <p>🎌 <b>Fiction Layer</b> — Anime & fantasy universes</p>
+<button onclick="startAll()">🌍 Explore Everything</button>
+<button onclick="startGods()">⚡ Greek Gods</button>
+<button onclick="startMyths()">🐉 Myth Creatures</button>
+<button onclick="showTimeline()">🕰️ World History</button>
 
 </div>
 
 <!-- 🔍 SEARCH -->
 <div class="searchBox">
-  <input id="search" placeholder="Search the universe..." onkeyup="search()">
+<input id="search" placeholder="Search..." onkeyup="search()">
 </div>
 
-<!-- 📚 CODEX GRID -->
+<!-- 📚 GRID -->
 <div class="grid" id="grid"></div>
 
-<!-- 📦 DETAILS PANEL -->
-<div id="panel">
-  <h2 id="name"></h2>
+<!-- 🕰️ TIMELINE -->
+<div class="timeline" id="timeline">
 
-  <img id="img" style="width:100%; border-radius:12px; margin:10px 0;">
+<h2>🌍 World Timeline</h2>
 
-  <p id="meta"></p>
-  <p id="desc"></p>
+<p>🌌 Mythic Age — Before time</p>
+<p>⚡ Age of Gods — 2000–400 BC</p>
+<p>🏺 Ancient Civilizations — 3000 BC – 500 AD</p>
+<p>🏰 Medieval Age — 500–1500 AD</p>
+<p>🧛 Dark Age — 1400–1700 AD</p>
+<p>🎩 Victorian Era — 1800–1900 AD</p>
+<p>⚙️ Industrial Age — 1900–1950 AD</p>
+<p>🌍 Modern Age — 1950–Now</p>
+<p>🎌 Fiction Layer — Anime Worlds</p>
 
-  <button onclick="closePanel()">Close</button>
 </div>
 
-<script src="script.js"></script>
+<!-- 📦 PANEL -->
+<div id="panel">
+<h2 id="name"></h2>
+<img id="img" style="width:100%;border-radius:10px;">
+<p id="meta"></p>
+<p id="desc"></p>
+<button onclick="closePanel()">Close</button>
+</div>
+
+<script>
+
+const DB = {
+Zeus:{type:"God",img:"https://cdn.pixabay.com/photo/2020/03/31/19/20/zeus-4989512_1280.jpg",era:"Age of Gods",period:"1200–400 BC",age:"Immortal",desc:"God of thunder"},
+Dragon:{type:"Myth",img:"https://cdn.pixabay.com/photo/2021/09/10/10/19/dragon-6613215_1280.jpg",era:"Mythic",period:"Pre-History",age:"Ancient",desc:"Fire beast"},
+Vampire:{type:"Undead",img:"https://cdn.pixabay.com/photo/2017/01/31/13/14/vampire-2025473_1280.jpg",era:"Dark Age",period:"1400–Present",age:"500+ years",desc:"Blood creature"},
+Werewolf:{type:"Cursed",img:"https://cdn.pixabay.com/photo/2020/10/05/20/23/wolf-5630123_1280.jpg",era:"Medieval",period:"1000–1600",age:"Human cursed",desc:"Moon beast"}
+};
+
+const grid=document.getElementById("grid");
+
+function build(){
+grid.innerHTML="";
+Object.keys(DB).forEach(k=>{
+let c=document.createElement("div");
+c.className="card";
+c.innerHTML=`<img src="${DB[k].img}"><b>${k}</b>`;
+c.onclick=()=>openItem(k);
+grid.appendChild(c);
+});
+}
+
+build();
+
+/* 🎬 INTRO CONTROLS */
+function startAll(){
+document.getElementById("intro").style.display="none";
+grid.style.display="grid";
+}
+
+function startGods(){
+startAll();
+Object.keys(DB).forEach(k=>{
+grid.children[0].style.display="";
+});
+}
+
+function startMyths(){
+startAll();
+}
+
+/* 🕰️ TIMELINE */
+function showTimeline(){
+document.getElementById("intro").style.display="none";
+document.getElementById("timeline").style.display="block";
+}
+
+/* 📦 OPEN */
+function openItem(k){
+let d=DB[k];
+document.getElementById("name").innerText=k;
+document.getElementById("img").src=d.img;
+document.getElementById("meta").innerText=
+`Type: ${d.type} | Era: ${d.era} | Period: ${d.period} | Age: ${d.age}`;
+document.getElementById("desc").innerText=d.desc;
+document.getElementById("panel").style.right="0";
+}
+
+/* ❌ CLOSE */
+function closePanel(){
+document.getElementById("panel").style.right="-420px";
+}
+
+/* 🔍 SEARCH */
+function search(){
+let v=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(v)?"block":"none";
+});
+}
+
+</script>
 
 </body>
 </html>
